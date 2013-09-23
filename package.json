@@ -1,0 +1,10 @@
+{
+  "name": "wastedhumanity",
+  "description": "how much time did humanity waste on shit",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.x",
+    "jade": "*"
+  }
+}

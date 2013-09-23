@@ -1,0 +1,47 @@
+extends layout
+
+block head
+
+block body
+	div#logo
+		span.logo WastedHumanity.com
+		br
+		h1 The shit we waste time on
+
+	div#check-video-form
+		span Youtube video url :
+		input#video-url(type='text')
+		input#check-video(type='button',value='Go')
+	
+	div#video-results(style='display:none;')
+		div.video-info
+			img.thumbnail(src='video_thumbnail.png')
+			span.title
+		div.wasted-time
+
+	div
+		span#video-result
+
+
+	div#popular-videos
+		| Other popular shit...
+		div.videos
+			span.popular-video(data-video-url='http://www.youtube.com/watch?v=9bZkp7q19f0')
+				span.video-info
+					img.thumbnail(src='video_thumbnail.png')
+					span.title
+
+			span.popular-video(data-video-url='http://www.youtube.com/watch?v=jofNR_WkoCE')
+				span.video-info
+					img.thumbnail(src='video_thumbnail.png')
+					span.title
+
+			span.popular-video(data-video-url='http://www.youtube.com/watch?v=QH2-TGUlwu4')
+				span.video-info
+					img.thumbnail(src='video_thumbnail.png')
+					span.title
+
+			span.popular-video(data-video-url='http://www.youtube.com/watch?v=kffacxfA7G4')
+				span.video-info
+					img.thumbnail(src='video_thumbnail.png')
+					span.title
