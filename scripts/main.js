@@ -1,6 +1,8 @@
 
 $(function() {
 
+	$('#video-url').focus();
+
 	$('#popular-videos .popular-video').each(function(i, elem) {
 		var url = $(elem).data('video-url');
 		$.ajax({
@@ -12,7 +14,7 @@ $(function() {
 				$(elem).find('.title').html(res.title);
 
 				var timeSpent = res.views * getHours(res.length);
-				$(elem).append('Wasted ' + friendlyTimeString(timeSpent) + ' on this video');
+				$(elem).find('.wasted-time').append('Humanity wasted ' + friendlyTimeString(timeSpent) + ' on ');
 			},
 			error: function(e) {
 				$(elem).find('.title').html('Error retrieving video data...');

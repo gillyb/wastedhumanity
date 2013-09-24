@@ -45,3 +45,4 @@ legend{color:#000}
 #popular-videos { text-align:left; margin-top:30px; color:#32a3dd; font-size:22px; font-weight:bold; }
 #popular-videos .videos { margin-top:10px; }
 #popular-videos .popular-video { display:inline-block; float:left; width:475px; margin-right:15px; margin-bottom:16px; }
+#popular-videos .video-info { font-weight:normal; color:black; }
