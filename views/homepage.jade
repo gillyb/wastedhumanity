@@ -4,24 +4,38 @@ block head
 
 block body
 	div#logo
-		span.logo WastedHumanity.com
-		br
-		h1 The shit we waste time on
+		img(src='main_banner.png')
+		
+	div#tagline
+		| Because it's the 21st century and we have nothing better to do!...
 
 	div#check-video-form
-		span Youtube video url :
-		input#video-url(type='text')
-		input#check-video(type='button',value='Go')
+		div.instructions
+			| Paste a youtube url to see how much time humanity wasted on it
+		div#input-border
+			input#video-url(type='text')
+			span#check-video
+				span.label BAM!
+				img.form-loader(style='display:none;',src='small_loader.gif')
 	
 	div#video-results(style='display:none;')
-		div.video-info
+		div.thumbnail
 			img.thumbnail(src='video_thumbnail.png')
-			span.title
-		div.wasted-time
-
-	div
-		span#video-result
-
+		div.video-info
+			div.movie-length
+				| This video is 
+				span
+				|  long.
+			div.movie-count
+				| It was watched 
+				span
+				|  times.
+			div.wasted-time
+				| Humanity spent 
+				span
+				|  watching this shit!
+			div.extra-info
+			div(style='clear:both;')
 
 	div#popular-videos
 		| Other popular shit...

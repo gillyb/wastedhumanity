@@ -19,7 +19,8 @@ legend{color:#000}
 
 * { font-family:arial; }
 
-#main { width:1000px; margin:0 auto; }
+#main { width:981px; margin:0 auto; text-align:center; }
+#tagline { font-family:sans-serif; letter-spacing: -0.05555556em; color:#32a3dd; font-weight:700; font-size:27px; font-style:italic; }
 
 #logo { font-size:24px; text-align:center; }
 
@@ -27,8 +28,20 @@ legend{color:#000}
 .title:hover { color:#2793e6; }
 .thumbnail { float:left; margin-right:10px; }
 
-#check-video-form { text-align:center; font-size:20px; height:30px; margin-top:30px;}
-#check-video-form #video-url { border:solid 1px #aeaeae; padding:3px; width:420px; }
-#check-video-form #check-video { border:solid 1px #aeaeae; padding:1px 10px 1px 10px; font-size:20px; height:32px; font-weight:bold; cursor:pointer; margin-left:-1px; }
+#check-video-form { text-align:center; font-size:20px; margin-top:30px;}
+#check-video-form #input-border { border:solid 4px #aeaeae; border-radius:10px; padding:10px; width:650px; margin:0 auto; }
+#check-video-form .instructions { color:#aeaeae; font-weight:bold;font-size:18px; }
+#check-video-form #video-url { border:0; padding:3px; width:545px; margin-right:10px; }
+#check-video-form #check-video { border:solid 3px #32a3dd; padding:5px 14px; font-size:20px; height:32px; font-weight:bold; cursor:pointer; border-radius:10px; background-color:#bde8ff; color:#32a3dd; }
+#check-video-form #check-video.loading { background-color:#aeaeae; border-color:#aeaeae; }
+#check-video-form #check-video:hover { background-color:#32a3dd; color:white; }
 
-#popular-videos .popular-video { display:inline-block; float:left; width:490px; margin-right:10px; margin-bottom:16px; }
+#video-results { width:800px; margin:0 auto; border-radius:10px; padding:10px; background-color:#e8e8e8; margin-top:14px; }
+#video-results .video-info { padding-left:134px; text-align:left; font-size:18px; }
+#video-results .video-info span { font-weight:bold; font-size:22px; }
+#video-results .video-info .wasted-time { font-weight:bold; font-size:22px; }
+#video-results .video-info .wasted-time span { font-size:32px; color:#32a3dd; }
+
+#popular-videos { text-align:left; margin-top:30px; color:#32a3dd; font-size:22px; font-weight:bold; }
+#popular-videos .videos { margin-top:10px; }
+#popular-videos .popular-video { display:inline-block; float:left; width:475px; margin-right:15px; margin-bottom:16px; }

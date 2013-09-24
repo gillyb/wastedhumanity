@@ -12,15 +12,22 @@ $(function() {
 				$(elem).find('.title').html(res.title);
 
 				var timeSpent = res.views * getHours(res.length);
-				$(elem).append('Wasted ' + timeSpent + ' hours on this video');
+				$(elem).append('Wasted ' + friendlyTimeString(timeSpent) + ' on this video');
 			},
 			error: function(e) {
-
+				$(elem).find('.title').html('Error retrieving video data...');
 			}
 		});
 	});
 
-	$('#check-video').on('click', function() {
+	// UPLOAD VIDEO FORM
+	$('#check-video').on('click', uploadVideo);
+
+	function uploadVideo() {
+		$('#check-video').addClass('loading');
+		$('#check-video .label').html('');
+		$('#check-video .form-loader').show();
+
 		var videoUrl = $('#video-url').val();
 		$.ajax({
 			type: 'post',
@@ -33,17 +40,29 @@ $(function() {
 				var timeSpent = views * videoLength;
 
 				var video = $('#video-results');
+				video.find('.movie-length span').html(getFriendlyDuration(res.length));
+				video.find('.movie-count span').html(numberWithCommas(res.views));
+				video.find('.wasted-time span').html(friendlyTimeString(timeSpent));
 				video.find('.thumbnail').attr('src', res.thumbnail);
 				video.find('.title').html(res.title);
 
 				video.slideDown();
-
-				$('#video-result').text('Humanity has spent ' + timeSpent + ' hours watching this stupid shit!');
 			},
 			error: function() {
-
+				
+			},
+			complete: function() {
+				$('#check-video').removeClass('loading');
+				$('#check-video .label').html('BAM!');
+				$('#check-video .form-loader').hide();
 			}
 		});
+	}
+
+	$('#video-url').keyup(function(event) {
+	    if (event.keyCode == 13) {
+	        uploadVideo();
+	    }
 	});
 
 	function getHours(duration) {
@@ -70,12 +89,23 @@ $(function() {
 		return hours;
 	}
 
+	function getFriendlyDuration(duration) {
+		return duration.replace('PT', '').replace('H', ':').replace('M', ':').replace('S', '');
+	}
+
 	function friendlyTimeString(numHours) {
 		if (numHours > 8760) // years
-			return Math.round(numHours / 8760) + ' years';
+			return numberWithCommas(Math.round(numHours / 8760)) + ' years';
 		if (numHours > 24) // days
-			return Math.round(numHours / 24) + ' days';
-		return Math.round(numHours) + ' hours';
+			return numberWithCommas(Math.round(numHours / 24)) + ' days';
+		if (numHours > 1)
+			return Math.round(numHours) + ' hours';
+
+		return 'less than 1 hour';
+	}
+
+	function numberWithCommas(x) {
+    	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	}
 
 });
