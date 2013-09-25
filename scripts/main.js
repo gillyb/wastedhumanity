@@ -1,7 +1,7 @@
 
 $(function() {
 
-	$('#video-url').focus();
+	$('#video-url').val('http://').focus();
 
 	$('#popular-videos .popular-video').each(function(i, elem) {
 		var url = $(elem).data('video-url');
@@ -10,11 +10,13 @@ $(function() {
 			url: '/get-info',
 			data: {videoUrl: url},
 			success: function(res) {
+				if (!res) return;
+
 				$(elem).find('.thumbnail').attr('src', res.thumbnail);
 				$(elem).find('.title').html(res.title);
 
 				var timeSpent = res.views * getHours(res.length);
-				$(elem).find('.wasted-time').append('Humanity wasted ' + friendlyTimeString(timeSpent) + ' on ');
+				$(elem).find('.wasted-time').html('Humanity wasted <span class="value">' + friendlyTimeString(timeSpent) + '</span> on this shit!');
 			},
 			error: function(e) {
 				$(elem).find('.title').html('Error retrieving video data...');
@@ -26,16 +28,22 @@ $(function() {
 	$('#check-video').on('click', uploadVideo);
 
 	function uploadVideo() {
+		var videoUrl = $('#video-url').val();
+		
+		if (videoUrl.trim() == '')
+			return;
+
 		$('#check-video').addClass('loading');
 		$('#check-video .label').html('');
 		$('#check-video .form-loader').show();
 
-		var videoUrl = $('#video-url').val();
 		$.ajax({
 			type: 'post',
 			url: '/get-info',
 			data: { videoUrl: videoUrl },
 			success: function(res) {
+				if (!res) return;
+				
 				// {title, length, views, thumbnail}
 				var videoLength = getHours(res.length);
 				var views = res.views;

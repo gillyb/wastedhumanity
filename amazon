@@ -1,0 +1,2 @@
+#!/bin/bash
+ssh -i gillyb.pem ubuntu@ec2-204-236-226-135.compute-1.amazonaws.com

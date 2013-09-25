@@ -3,63 +3,85 @@ extends layout
 block head
 
 block body
-	div#logo
-		img(src='main_banner.png')
+
+	div#main
+
+		div#clouds-background
+			div.cloud.x1
+			div.cloud.x2
+			div.cloud.x3
+			div.cloud.x4
+			div.cloud.x4
+			div.cloud.x6
+			div.cloud.x5
+			div.cloud.x3
+
+			div#logo-and-form
+				div#logo-wrapper
+					div#logo
+						//img(src='main_banner.png')
+						| WastedHumanity
+
+				div#tagline
+					| Because it's the 21st century and we have nothing better to do!...
+
+				div#check-video-form
+					div.instructions
+						| Paste a youtube url to see how much time humanity wasted on it
+					div#input-border
+						input#video-url(type='text', value='http://')
+						span#check-video
+							span.label BAM!
+							img.form-loader(style='display:none;',src='small_loader.gif')
 		
-	div#tagline
-		| Because it's the 21st century and we have nothing better to do!...
+		div#video-results(style='display:none;')
+			div.thumbnail
+				img.thumbnail(src='video_thumbnail.png')
+			div.video-info
+				div.movie-length
+					| This video is 
+					span
+					| s long.
+				div.movie-count
+					| It was watched 
+					span
+					|  times.
+				div.wasted-time
+					| Humanity spent 
+					span
+					|  watching this shit!
+				div.extra-info
+				div(style='clear:both;')
 
-	div#check-video-form
-		div.instructions
-			| Paste a youtube url to see how much time humanity wasted on it
-		div#input-border
-			input#video-url(type='text')
-			span#check-video
-				span.label BAM!
-				img.form-loader(style='display:none;',src='small_loader.gif')
-	
-	div#video-results(style='display:none;')
-		div.thumbnail
-			img.thumbnail(src='video_thumbnail.png')
-		div.video-info
-			div.movie-length
-				| This video is 
-				span
-				| s long.
-			div.movie-count
-				| It was watched 
-				span
-				|  times.
-			div.wasted-time
-				| Humanity spent 
-				span
-				|  watching this shit!
-			div.extra-info
-			div(style='clear:both;')
+		div#popular-videos
+			| Other popular shit...
+			div.videos
+				span.popular-video(data-video-url='http://www.youtube.com/watch?v=9bZkp7q19f0')
+					span.video-info
+						img.thumbnail(src='video_thumbnail.png')
+						div.title
+						span.wasted-time
+						span.view-movie Waste more time!
 
-	div#popular-videos
-		| Other popular shit...
-		div.videos
-			span.popular-video(data-video-url='http://www.youtube.com/watch?v=9bZkp7q19f0')
-				span.video-info
-					img.thumbnail(src='video_thumbnail.png')
-					span.wasted-time
-					span.title
+				span.popular-video(data-video-url='http://www.youtube.com/watch?v=jofNR_WkoCE')
+					span.video-info
+						img.thumbnail(src='video_thumbnail.png')
+						div.title
+						span.wasted-time
+						span.view-movie Waste more time!
 
-			span.popular-video(data-video-url='http://www.youtube.com/watch?v=jofNR_WkoCE')
-				span.video-info
-					img.thumbnail(src='video_thumbnail.png')
-					span.wasted-time
-					span.title
+				span.popular-video(data-video-url='http://www.youtube.com/watch?v=QH2-TGUlwu4')
+					span.video-info
+						img.thumbnail(src='video_thumbnail.png')
+						div.title
+						span.wasted-time
+						span.view-movie Waste more time!
 
-			span.popular-video(data-video-url='http://www.youtube.com/watch?v=QH2-TGUlwu4')
-				span.video-info
-					img.thumbnail(src='video_thumbnail.png')
-					span.wasted-time
-					span.title
+				span.popular-video(data-video-url='http://www.youtube.com/watch?v=kffacxfA7G4')
+					span.video-info
+						img.thumbnail(src='video_thumbnail.png')
+						div.title
+						span.wasted-time
+						span.view-movie Waste more time!
 
-			span.popular-video(data-video-url='http://www.youtube.com/watch?v=kffacxfA7G4')
-				span.video-info
-					img.thumbnail(src='video_thumbnail.png')
-					span.wasted-time
-					span.title
+				div(style='clear:both;')
