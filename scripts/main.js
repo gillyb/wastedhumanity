@@ -10,9 +10,18 @@ $(function() {
 			url: '/get-info',
 			data: {videoUrl: url},
 			success: function(res) {
-				if (!res) return;
+				if (!res) {
+					$(elem).find('.title').html('Error retrieving video data...');
+					$(elem).find('.view-movie').remove();
+					return;
+				}
 
-				$(elem).find('.thumbnail').attr('src', res.thumbnail);
+				var defaultImg = $(elem).find('.thumbnail').attr('src');
+				$(elem).find('.thumbnail')
+					.attr('src', res.thumbnail)
+					.one('error', function() {
+						$(this).attr('src', res.thumbnail);
+					});
 				$(elem).find('.title').html(res.title);
 
 				var timeSpent = res.views * getHours(res.length);
