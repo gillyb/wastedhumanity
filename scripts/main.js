@@ -4,7 +4,19 @@ $(function() {
 	$('#video-url').val('http://').focus();
 
 	$('#popular-videos .popular-video').each(function(i, elem) {
-		var url = $(elem).data('video-url');
+		var url = $(elem).data('video-id');
+
+		var hasInfo = $(elem).find('.title').length > 0;
+		if (hasInfo) {
+			var wastedTime = $(elem).find('.wasted-time');
+			if (wastedTime.data('views') && wastedTime.data('length')) {
+				var timeSpent = wastedTime.data('views') * getHours(wastedTime.data('length'));
+				$(elem).find('.wasted-time').html('Humanity wasted <span class="value">' + friendlyTimeString(timeSpent) + '</span> on this shit!');
+			}
+			return;
+		}
+
+		console.log('making ajax request');
 		$.ajax({
 			type: 'post',
 			url: '/get-info',

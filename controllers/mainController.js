@@ -3,7 +3,36 @@ var youtubeProvider = require('../youTubeProvider');
 var cacheProvider = require('../cacheProvider');
 
 app.get('/', function(req, res) {
-	res.render('homepage');
+
+	var popularVideoIds = [
+		'9bZkp7q19f0', 'jofNR_WkoCE', 'QH2-TGUlwu4', 'kffacxfA7G4',
+		'vSW04S2YbCY'
+	];
+
+	var _videos = [];
+
+	// check if we have them in the cache already
+	var videoCount = 0;
+	popularVideoIds.forEach(function(val) {
+		youtubeProvider.getVideoInfo(val, function(videoInfo) {
+			console.log(videoInfo);
+			if (videoInfo != null)
+				_videos.push({
+					videoId: val,
+					videoInfo: videoInfo
+				});
+			else
+				_videos.push({
+					videoId: val,
+					videoInfo: { title:'', length:'', views:'', thumbnail:'' }
+				});
+
+			videoCount++;
+			if (videoCount == popularVideoIds.length) {
+				res.render('homepage', {videos:_videos});
+			}
+		});
+	});
 });
 
 app.post('/get-info', function(req, res) {

@@ -26,7 +26,7 @@ var _getVideoInfo = function(videoId, callback) {
 	https.request(options, function(res) {
 		console.log(res.statusCode);
 		res.on('data', function(d) {
-			chunks.push(d.toString());
+			chunks.push(d);
 		});
 		res.on('end', function() {
 			var data = ''.concat(chunks);
@@ -36,12 +36,14 @@ var _getVideoInfo = function(videoId, callback) {
 			}
 			catch (e) {
 				console.log('error extracting video data. Error: ' + e);
+				console.log(data);
 				callback(null);
 			}
 		});
 	})
 	.on('error', function(er) {
 		console.log(er);
+		callback(null);
 	})
 	.end();
 };
@@ -56,10 +58,10 @@ function extractVideoData(data) {
 	var videoThumbnail = videoObj['snippet']['thumbnails']['default']['url'];
 
 	return {
-		title: videoName,
-		length: videoLength,
-		views: videoViewCount,
-		thumbnail: videoThumbnail
+		title: videoName.replace('\'', '\\\'').replace('"', '\"'),
+		length: videoLength.replace('\'', '\\\'').replace('"', '\"'),
+		views: videoViewCount.replace('\'', '\\\'').replace('"', '\"'),
+		thumbnail: videoThumbnail.replace('\'', '\\\'').replace('"', '\"')
 	};
 }
 
