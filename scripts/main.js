@@ -102,7 +102,7 @@ $(function() {
 
 		var s = d.split('S');
 		if (s.length > 1) {
-			hours += parseInt(s[0] / (60 * 60));
+			hours += parseFloat(s[0] / (60 * 60));
 		}
 
 		return hours;
