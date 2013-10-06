@@ -63,7 +63,7 @@ $(function() {
 				video.find('.movie-count span').html(numberWithCommas(res.views));
 				video.find('.wasted-time span').html(friendlyTimeString(timeSpent));
 				video.find('.thumbnail').attr('src', res.thumbnail);
-				video.find('.title').html(res.title);
+				video.find('.video-title').html(res.title);
 
 				video.slideDown();
 			},

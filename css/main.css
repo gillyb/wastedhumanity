@@ -42,6 +42,7 @@ html { background-color:#e8e8e8; }
 #check-video-form #check-video:hover { background-color:#32a3dd; color:white; }
 
 #video-results { width:800px; margin:0 auto; border-radius:10px; padding:10px; background-color:#e8e8e8; margin-top:14px; border:solid 2px black; background-color:white; }
+#video-results .video-title { font-size:16px; font-weight:bold; }
 #video-results .video-info { padding-left:134px; text-align:left; font-size:18px; }
 #video-results .video-info span { font-weight:bold; font-size:22px; }
 #video-results .video-info .wasted-time { font-weight:bold; font-size:22px; }
