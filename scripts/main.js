@@ -64,6 +64,7 @@ $(function() {
 				video.find('.wasted-time span').html(friendlyTimeString(timeSpent));
 				video.find('.thumbnail').attr('src', res.thumbnail);
 				video.find('.video-title').html(res.title);
+				video.find('.fun-fact').html(' ' + getHistoryFact(timeSpent));
 
 				video.slideDown();
 			},
@@ -128,3 +129,39 @@ $(function() {
 	}
 
 });
+
+function getHistoryFact(numYears) {
+	try {
+		var shorterEvents = [];
+		_historyFacts.forEach(function(val) {
+			if (val[0] <= numYears)
+				shorterEvents.push(val[1]);
+		});
+
+		if (shorterEvents.length == 0)
+			return null;
+
+		return shorterEvents[Math.floor((Math.random() * 100) % (shorterEvents.length + 1))];
+	}
+	catch (e) {
+		return null;
+	}
+}
+
+var _historyFacts = [
+	[4, 'It only took 4 years to paint the <a href="http://en.wikipedia.org/wiki/Mona_Lisa" target="_blank">Mona Lisa</a>!'],
+	[10, 'The <a href="http://en.wikipedia.org/wiki/French_Revolution" target="_blank">French Revolution</a> only lasted 10 years!'],
+	[10, 'It only took 10 years to build the <a href="http://en.wikipedia.org/wiki/Colosseum" target="_blank">Colloseum</a> in Rome!'],
+	[21, 'It took only 21 years to build the <a href="http://en.wikipedia.org/wiki/Colosseum" target="_blank">Taj Mahal</a> in India!'],
+	[17, 'It took 17 years to build the <a href="http://en.wikipedia.org/wiki/Panama_Canal" target="_blank">Panama Canal</a>'],
+	[20, 'It took only 20 years to built the <a href="http://en.wikipedia.org/wiki/Great_Pyramid_of_Giza" target="_blank">Great Pyramid of Giza</a>!'],
+	[84, '<a href="http://en.wikipedia.org/wiki/DNA" target="_blank">DNA</a> was discovered in 1869, and it took only 84 years to reveal the full structure!'],
+	[346, 'The <a href="http://en.wikipedia.org/wiki/British_Empire" target="_blank">British Empire</a> only lasted 346 years!'],
+	[623, 'The <a href="http://en.wikipedia.org/wiki/Ottoman_Empire" target="_blank">Ottoman Empire</a> only lasted 623 years!'],
+	[4, 'It only took 4 years to paint the <a href="http://en.wikipedia.org/wiki/Sistine_Chapel" target="_blank">Sistine Chapel</a>!']	,
+	[4, 'It took less than 4 years to build the <a href="http://en.wikipedia.org/wiki/RMS_Titanic" target="_blank">Titanic</a>!'],
+	[6, '<a href="http://en.wikipedia.org/wiki/World_War_II" target="_blank">World War II</a> only lasted 6 years!'],
+	[2, 'It only took 2 years to build the <a href="http://en.wikipedia.org/wiki/Eiffel_Tower" target="_blank">Eiffel Tower</a>'],
+	[2, 'It took 2 years to build the <a href="http://en.wikipedia.org/wiki/Empire_State_Building" target="_blank">Empire State Building</a>'],
+	[5, 'It only took 5 years to discover the <a href="http://en.wikipedia.org/wiki/Polio_vaccine" target="_blank">Polio Vaccine</a>']
+];
