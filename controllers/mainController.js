@@ -19,31 +19,21 @@ app.get('/', function(req, res) {
 		if (cacheValue != null)
 			_videos.push({
 				videoId: videoId,
-				videoInfo: videoInfo
+				videoInfo: cacheValue
 			});
 		else
 			_videos.push({
 				videoId: videoId,
 				videoInfo: { title:'', length:'', views:'', thumbnail:'' }
 			});
-
-		console.log(JSON.stringify(_videos));
-		res.render('homepage', {videos:_videos});
 	});
+
+	console.log(JSON.stringify(_videos));
+	res.render('homepage', {videos:_videos});
 });
 
 app.post('/get-info', function(req, res) {
-	var videoUrl = req.body.videoUrl;
-
-	// extract the video id from the url
-	var videoId = null;
-	try {
-		videoId = youtubeProvider.getVideoId(videoUrl);
-	}
-	catch (e) {
-		// TODO: return some json response
-		res.json({error:'error extracting youtube video id'});
-	}
+	var videoId = req.body.videoId;
 
 	// check if we have it in the cache
 	var cacheValue = cacheProvider.get(videoId);

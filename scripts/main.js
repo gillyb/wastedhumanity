@@ -4,7 +4,7 @@ $(function() {
 	$('#video-url').val('http://').focus();
 
 	$('#popular-videos .popular-video').each(function(i, elem) {
-		var url = $(elem).data('video-id');
+		var _videoId = $(elem).data('video-id');
 
 		/*var hasInfo = $(elem).find('.title').length > 0;
 		if (hasInfo) {
@@ -20,7 +20,7 @@ $(function() {
 		$.ajax({
 			type: 'post',
 			url: '/get-info',
-			data: {videoUrl: url},
+			data: {videoId: _videoId},
 			success: function(res) {
 				if (!res) {
 					$(elem).find('.title').html('Error retrieving video data...');
