@@ -27,6 +27,7 @@ app.get('/', function(req, res) {
 				videoInfo: { title:'', length:'', views:'', thumbnail:'' }
 			});
 
+		console.log(JSON.stringify(_videos));
 		res.render('homepage', {videos:_videos});
 	});
 });

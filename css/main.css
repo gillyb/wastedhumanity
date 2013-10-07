@@ -175,3 +175,9 @@ html { background-color:#e8e8e8; }
 	0% {margin-left: 1000px;}
 	100% {margin-left: -1000px;}
 }
+
+
+
+
+/* Google Ads */
+#google-ads { display:inline-block; position:fixed; right:0; top:200px; }
