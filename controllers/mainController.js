@@ -33,7 +33,17 @@ app.get('/', function(req, res) {
 });
 
 app.post('/get-info', function(req, res) {
-	var videoId = req.body.videoId;
+	var videoId;
+	var videoUrl = req.body.videoUrl;
+
+	if (videoUrl) {
+		// TODO: add proper error handling in case we can't extract the youtube id
+		videoId = youtubeProvider.getVideoId(videoUrl);
+		console.log('got youtube id!! - ' + videoId);
+	}
+	else {
+		videoId = req.body.videoId;
+	}
 
 	// check if we have it in the cache
 	var cacheValue = cacheProvider.get(videoId);

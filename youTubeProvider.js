@@ -21,8 +21,9 @@ var _getVideoInfo = function(videoId, callback) {
 		'port': 443,
 		'path': '/youtube/v3/videos?part=contentDetails,statistics,snippet&id=' + videoId + '&key=' + youtubeApiKey
 	};
+	
 	var data = '';
-
+	console.log('making request to :' + options.path);
 	https.request(options, function(res) {
 		console.log(res.statusCode);
 		res.on('data', function(d) {
