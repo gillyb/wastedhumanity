@@ -36,7 +36,7 @@ html { background-color:#e8e8e8; }
 #check-video-form #input-border { border:solid 2px #555; border-radius:10px; padding:10px; width:650px; margin:0 auto; background-color:white; }
 #check-video-form .instructions { font-size:18px; }
 #check-video-form #video-url { border:0; padding:3px; width:545px; margin-right:10px; outline:0; }
-#check-video-form #check-video { padding:11px 18px; font-size:20px; height:32px; font-weight:bold; cursor:pointer; border-radius:0 7px 7px 0; background-color:#ADE3FF; color:#32a3dd; margin-right:-18px; }
+#check-video-form #check-video { padding:11px 18px; font-size:20px; height:32px; font-weight:bold; cursor:pointer; border-radius:0 7px 7px 0; background-color:#ADE3FF; color:#32a3dd; margin-right:-20px;margin-top:-8px;margin-bottom:-8px;display:inline-block;width:50px; }
 #check-video-form #check-video.loading { background-color:#aeaeae; border-color:#aeaeae; }
 #check-video-form #check-video:hover { -webkit-transition:background-color 0.5s linear; background:#32a3dd; }
 #check-video-form #check-video:hover { background-color:#32a3dd; color:white; }
