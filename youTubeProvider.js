@@ -21,15 +21,14 @@ var _getVideoInfo = function(videoId, callback) {
 		'port': 443,
 		'path': '/youtube/v3/videos?part=contentDetails,statistics,snippet&id=' + videoId + '&key=' + youtubeApiKey
 	};
-	var chunks = [];
+	var data = '';
 
 	https.request(options, function(res) {
 		console.log(res.statusCode);
 		res.on('data', function(d) {
-			chunks.push(d);
+			data += d;
 		});
 		res.on('end', function() {
-			var data = ''.concat(chunks);
 			try {
 				var videoData = extractVideoData(data);
 				callback(videoData);

@@ -6,6 +6,9 @@ $(function() {
 	$('#popular-videos .popular-video').each(function(i, elem) {
 		var _videoId = $(elem).data('video-id');
 
+		var hasInfo = $(elem).find('.title').text().trim() != '';
+		if (hasInfo) return;
+
 		console.log('making ajax request');
 		$.ajax({
 			type: 'post',
