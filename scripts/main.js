@@ -94,6 +94,12 @@ $(function() {
 	    }
 	});
 
+	$('.view-movie').on('click', function() {
+		var videoId = $(this).parents('.popular-video').data('video-id');
+		var url = 'http://www.youtube.com/watch?v=' + videoId;
+		window.open(url, 'youtube_video');
+	});
+
 	function getHours(duration) {
 		var hours = 0;
 		var d = duration.substring(2);

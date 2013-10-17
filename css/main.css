@@ -30,7 +30,7 @@ html { background-color:#e8e8e8; }
 #logo-wrapper { }
 #logo { font-size:24px; text-align:center; font-family:'Sniglet', Arial, sans-serif; color:white; font-size:54px; letter-spacing:-3px; padding-top:70px; }
 
-.title { color:#333; font-weight:bold; font-size:13px; cursor:pointer; }
+.title { color:#333; font-weight:bold; font-size:13px; }
 .thumbnail { float:left; margin-right:10px; }
 
 #check-video-form { text-align:center; font-size:20px; margin-top:30px;}
