@@ -16,7 +16,7 @@ block body
 			div.cloud.x5
 			div.cloud.x3
 
-			div#logo-and-form
+			div#logo-and-form.content
 				div#logo-wrapper
 					div#logo
 						| WastedHumanity
@@ -33,7 +33,7 @@ block body
 							span.label BAM!
 							img.form-loader(style='display:none;',src='small_loader.gif')
 		
-		div#video-results(style='display:none;')
+		div#video-results(style='display:none;').content
 			div.thumbnail
 				img.thumbnail(src='video_thumbnail.png')
 			div.video-info
@@ -53,7 +53,7 @@ block body
 				div.fun-fact
 				div(style='clear:both;')
 
-		div#popular-videos
+		div#popular-videos.content
 			| Other popular shit...
 			div.videos
 				each val in videos
