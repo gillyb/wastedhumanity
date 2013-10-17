@@ -30,7 +30,7 @@ $(function() {
 				$(elem).find('.title').html(res.title);
 
 				var timeSpent = res.views * getHours(res.length);
-				$(elem).find('.wasted-time').html('Humanity wasted <span class="value">' + friendlyTimeString(timeSpent) + '</span> on this shit!');
+				$(elem).find('.wasted-time').html('Humanity wasted <span class="value">' + friendlyTimeString(timeSpent) + '</span> watching this!');
 			},
 			error: function(e) {
 				$(elem).find('.title').html('Error retrieving video data...');

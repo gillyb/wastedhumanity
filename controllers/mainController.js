@@ -5,8 +5,7 @@ var cacheProvider = require('../cacheProvider');
 app.get('/', function(req, res) {
 
 	var popularVideoIds = [
-		'9bZkp7q19f0', 'jofNR_WkoCE', 'QH2-TGUlwu4', 'kffacxfA7G4',
-		'vSW04S2YbCY'
+		'9bZkp7q19f0', 'jofNR_WkoCE', 'QH2-TGUlwu4', 'kffacxfA7G4'
 	];
 
 	var _videos = [];
