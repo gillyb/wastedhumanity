@@ -7,7 +7,12 @@ $(function() {
 		var _videoId = $(elem).data('video-id');
 
 		var hasInfo = $(elem).find('.title').text().trim() != '';
-		if (hasInfo) return;
+		if (hasInfo) {
+			var e = $(elem).find('.wasted-time');
+			var timeSpent = e.data('views') * getHours(e.data('length'));
+			e.html('Humanity wasted <span class="value">' + friendlyTimeString(timeSpent) + '</span> watching this!');
+			return;
+		}
 
 		console.log('making ajax request');
 		$.ajax({
