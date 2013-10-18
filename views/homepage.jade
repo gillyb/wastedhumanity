@@ -16,22 +16,23 @@ block body
 			div.cloud.x5
 			div.cloud.x3
 
-			div#logo-and-form.content
-				div#logo-wrapper
-					div#logo
-						| WastedHumanity
+			div#logo-and-form
+				div.content
+					div#logo-wrapper
+						div#logo
+							| WastedHumanity
 
-				div#tagline
-					| Because it's the 21st century and we have nothing better to do!...
+					div#tagline
+						| Because it's the 21st century and we have nothing better to do!...
 
-				div#check-video-form
-					div.instructions
-						| Paste a youtube url to see how much time humanity wasted on it
-					div#input-border
-						input#video-url(type='text', value='http://')
-						span#check-video
-							span.label BAM!
-							img.form-loader(style='display:none;',src='small_loader.gif')
+					div#check-video-form
+						div.instructions
+							| Paste a youtube url to see how much time humanity wasted on it
+						div#input-border
+							input#video-url(type='text', value='http://')
+							span#check-video
+								span.label BAM!
+								img.form-loader(style='display:none;',src='small_loader.gif')
 		
 		div#video-results(style='display:none;').content
 			div.thumbnail
