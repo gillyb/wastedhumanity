@@ -2,33 +2,24 @@
 var youtubeProvider = require('../youTubeProvider');
 var cacheProvider = require('../cacheProvider');
 
+var popularVideos = ['9bZkp7q19f0', 'kffacxfA7G4', '_OBlgSz8sSM', 'QK8mJJJvaes'];
+var favoriteVideos = ['QH2-TGUlwu4', 'jofNR_WkoCE', 'uVTfszppJl8', 'nlt5Wa13fFU'];
+
 app.get('/', function(req, res) {
-
-	var popularVideoIds = [
-		'9bZkp7q19f0', 'jofNR_WkoCE', 'QH2-TGUlwu4', 'kffacxfA7G4'
-	];
-
-	var _videos = [];
-
-	// check if we have them in the cache already
-	var videoCount = 0;
-	popularVideoIds.forEach(function(videoId) {
-		var cacheValue = cacheProvider.get(videoId);
-
-		if (cacheValue != null)
-			_videos.push({
-				videoId: videoId,
-				videoInfo: cacheValue
-			});
-		else
-			_videos.push({
-				videoId: videoId,
-				videoInfo: { title:'', length:'', views:'', thumbnail:'' }
-			});
+	res.render('homepage', {
+		videos: getHomePageVideos(popularVideos),
+		favoriteVideos: getHomePageVideos(favoriteVideos),
+		currentVideo:null
 	});
+});
 
-	console.log(JSON.stringify(_videos));
-	res.render('homepage', {videos:_videos});
+app.get('/:videoId', function(req, res) {
+	var videoId = req.params.videoId;
+	res.render('homepage', {
+		videos: getHomePageVideos(popularVideos),
+		favoriteVideos: getHomePageVideos(favoriteVideos),
+		currentVideo: videoId
+	});
 });
 
 app.post('/get-info', function(req, res) {
@@ -65,3 +56,26 @@ app.post('/get-info', function(req, res) {
 	}
 
 });
+
+function getHomePageVideos(videoIds) {
+	var _videos = [];
+
+	// check if we have them in the cache already
+	var videoCount = 0;
+	videoIds.forEach(function(videoId) {
+		var cacheValue = cacheProvider.get(videoId);
+
+		if (cacheValue != null)
+			_videos.push({
+				videoId: videoId,
+				videoInfo: cacheValue
+			});
+		else
+			_videos.push({
+				videoId: videoId,
+				videoInfo: { title:'', length:'', views:'', thumbnail:'' }
+			});
+	});
+
+	return _videos;
+}

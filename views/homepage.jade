@@ -34,7 +34,7 @@ block body
 								span.label BAM!
 								img.form-loader(style='display:none;',src='small_loader.gif')
 		
-		div#video-results(style='display:none;').content
+		div#video-results(style='display:none;',data-current-video='#{currentVideo}').content
 			div.thumbnail
 				img.thumbnail(src='video_thumbnail.png')
 			div.video-info
@@ -48,14 +48,14 @@ block body
 					span
 					|  times.
 				div.wasted-time
-					| Humanity spent 
+					| Humanity wasted 
 					span
-					|  watching this shit!
+					|  watching this!
 				div.fun-fact
 				div(style='clear:both;')
 
 		div#popular-videos.content
-			| We also spent too much time watching these...
+			| We also wasted too much time on these...
 			div.videos
 				each val in videos
 					span.popular-video(data-video-id='#{val.videoId}')
@@ -64,27 +64,19 @@ block body
 							div.title #{val.videoInfo.title}
 							span.wasted-time(data-views='#{val.videoInfo.views}',data-length='#{val.videoInfo.length}')
 							span.view-movie Waste more time!
+				div.breaker
 
-				//
-					span.popular-video(data-video-url='http://www.youtube.com/watch?v=jofNR_WkoCE')
+		div#popular-videos.content
+			| Our favorites
+			div.videos
+				each val in favoriteVideos
+					span.popular-video(data-video-id='#{val.videoId}')
 						span.video-info
-							img.thumbnail(src='video_thumbnail.png')
-							div.title
-							span.wasted-time
+							img.thumbnail(src='#{val.videoInfo.thumbnail}')
+							div.title #{val.videoInfo.title}
+							span.wasted-time(data-views='#{val.videoInfo.views}',data-length='#{val.videoInfo.length}')
 							span.view-movie Waste more time!
+				div.breaker
 
-					span.popular-video(data-video-url='http://www.youtube.com/watch?v=QH2-TGUlwu4')
-						span.video-info
-							img.thumbnail(src='video_thumbnail.png')
-							div.title
-							span.wasted-time
-							span.view-movie Waste more time!
-
-					span.popular-video(data-video-url='http://www.youtube.com/watch?v=kffacxfA7G4')
-						span.video-info
-							img.thumbnail(src='video_thumbnail.png')
-							div.title
-							span.wasted-time
-							span.view-movie Waste more time!
 
 				div(style='clear:both;')

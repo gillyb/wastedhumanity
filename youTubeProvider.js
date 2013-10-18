@@ -4,13 +4,19 @@ var https = require('https');
 var youtubeApiKey = 'AIzaSyA0xWbm5Q7SF5aFZQJ8EGmb6fNc8cjQEwg';
 
 var _getVideoId = function(url) {
-    
-    var regExp = /.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/;
-	var match = url.match(regExp);
-	if (match && match[1].length == 11)
-	    return match[1];
 
-    return null;
+	var videoid = url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
+	if (videoid != null) {
+		if (videoid.indexOf('v=') > -1) {
+			console.log('fixing youtube id');
+			console.log(videoid.substr(2));
+			return videoid.substr(2);
+		}
+
+		return videoid[1];
+	}
+	
+	return null;
 };
 
 var _getVideoInfo = function(videoId, callback) {
@@ -52,12 +58,14 @@ function extractVideoData(data) {
 	var jsonObj = JSON.parse(data.toString());
 	var videoObj = jsonObj['items'][0];
 
+	var videoId = videoObj['id'];
 	var videoName = videoObj['snippet']['title'];
 	var videoLength = videoObj['contentDetails']['duration'];
 	var videoViewCount = videoObj['statistics']['viewCount'];
 	var videoThumbnail = videoObj['snippet']['thumbnails']['default']['url'];
 
 	return {
+		id: videoId,
 		title: videoName.replace('\'', '\\\'').replace('"', '\"'),
 		length: videoLength.replace('\'', '\\\'').replace('"', '\"'),
 		views: videoViewCount.replace('\'', '\\\'').replace('"', '\"'),
