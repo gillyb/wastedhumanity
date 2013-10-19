@@ -128,13 +128,20 @@ function handleHistory(videoId) {
 }
 
 function openYoutubeVideo(videoId) {
-	var backdrop = $('<div/>');
+	var backdrop = $('<div/>').addClass('youtube-player-backdrop');
 	backdrop.css({ 'zindex':990, 'position':'fixed', 'top':0, 'left':0, 'width':$(window).width(), 'height':$(window).height(), 'background-color':'#111', 'opacity':0.5 });
 	backdrop.on('click', function() {
 		$(this).remove();
 		$('.inner-youtube-player').remove();
 	});
 	backdrop.appendTo($('body'));
+
+	$(document).keyup(function(e) {
+  		if (e.keyCode == 27) { // escape key
+  			$('.youtube-player-backdrop').remove();
+  			$('.inner-youtube-player').remove();
+  		}
+	});
 
 	var dialog = $('<div/>').addClass('inner-youtube-player');
 	var left = ($(window).width() / 2) - 425;
