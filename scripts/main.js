@@ -74,7 +74,7 @@ $(function() {
 			success: function(res) {
 				if (!res) return;
 				
-				// {title, length, views, thumbnail}
+				// {id, title, length, views, thumbnail}
 				var videoLength = getHours(res.length);
 				var views = res.views;
 				var timeSpent = views * videoLength;
@@ -88,6 +88,7 @@ $(function() {
 				video.find('.fun-fact').html(' ' + getHistoryFact(timeSpent));
 
 				video.slideDown();
+				handleHistory(res.id);
 			},
 			error: function() {
 				
@@ -117,6 +118,13 @@ $(function() {
 	});
 	
 });
+
+function handleHistory(videoId) {
+	var pageTitle = 'Wasted Humanity - The time humanity wasted on youtube vidoes';
+	if (!history || !history.pushState)
+		return;
+	history.pushState(null, pageTitle, '/' + videoId);
+}
 
 function getHours(duration) {
 	var hours = 0;
