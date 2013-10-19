@@ -31,7 +31,6 @@ var _getVideoInfo = function(videoId, callback) {
 	var data = '';
 	console.log('making request to :' + options.path);
 	https.request(options, function(res) {
-		console.log(res.statusCode);
 		res.on('data', function(d) {
 			data += d;
 		});

@@ -80,6 +80,8 @@ $(function() {
 				var timeSpent = views * videoLength;
 
 				var video = $('#video-results');
+				video.find('.thumbnail').on('click', function() { openYoutubeVideo(res.id); });
+				video.find('.video-title').on('click', function() { openYoutubeVideo(res.id); });
 				video.find('.movie-length span').html(getFriendlyDuration(res.length));
 				video.find('.movie-count span').html(numberWithCommas(res.views));
 				video.find('.wasted-time span').html(friendlyTimeString(timeSpent));
@@ -114,8 +116,6 @@ $(function() {
 	$('.view-movie').on('click', function() {
 		var videoId = $(this).parents('.popular-video').data('video-id');
 		openYoutubeVideo(videoId);
-		// var url = 'http://www.youtube.com/watch?v=' + videoId;
-		// window.open(url, 'youtube_video');
 	});
 	
 });
