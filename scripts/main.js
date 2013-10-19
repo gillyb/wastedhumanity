@@ -113,8 +113,9 @@ $(function() {
 
 	$('.view-movie').on('click', function() {
 		var videoId = $(this).parents('.popular-video').data('video-id');
-		var url = 'http://www.youtube.com/watch?v=' + videoId;
-		window.open(url, 'youtube_video');
+		openYoutubeVideo(videoId);
+		// var url = 'http://www.youtube.com/watch?v=' + videoId;
+		// window.open(url, 'youtube_video');
 	});
 	
 });
@@ -124,6 +125,23 @@ function handleHistory(videoId) {
 	if (!history || !history.pushState)
 		return;
 	history.pushState(null, pageTitle, '/' + videoId);
+}
+
+function openYoutubeVideo(videoId) {
+	var backdrop = $('<div/>');
+	backdrop.css({ 'zindex':990, 'position':'fixed', 'top':0, 'left':0, 'width':$(window).width(), 'height':$(window).height(), 'background-color':'#111', 'opacity':0.5 });
+	backdrop.on('click', function() {
+		$(this).remove();
+		$('.inner-youtube-player').remove();
+	});
+	backdrop.appendTo($('body'));
+
+	var dialog = $('<div/>').addClass('inner-youtube-player');
+	var left = ($(window).width() / 2) - 425;
+	var top = ($(window).height() / 2) - 240;
+	dialog.css({ 'zindex':1000, 'display':'inline-block', 'width':560, 'height':315, 'position':'fixed', 'top':top, 'left':left });
+	dialog.html('<object height="480" width="853"><param name="movie" value="http://www.youtube.com/v/'+videoId+'&autoplay=1" /><embed height="480" src="http://www.youtube.com/v/'+videoId+'&autoplay=1" type="application/x-shockwave-flash" width="853"></embed></object>');
+	dialog.appendTo($('body'));
 }
 
 function getHours(duration) {
