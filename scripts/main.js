@@ -143,7 +143,12 @@ function getHours(duration) {
 }
 
 function getFriendlyDuration(duration) {
-	return duration.replace('PT', '').replace('H', ':').replace('M', ':').replace('S', '');
+	var time = duration.replace('PT', '').replace('H', ':').replace('M', ':').replace('S', '');
+	var timeParts = time.split(':');
+	var parsedTime = '';
+	for (var i=0; i<timeParts.length; i++)
+		parsedTime = parsedTime + ("0" + timeParts[i]).slice(-2) + ':';
+	return parsedTime.substring(0, parsedTime.length-1);
 }
 
 function friendlyTimeString(numHours) {
