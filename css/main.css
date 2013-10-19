@@ -18,15 +18,15 @@ legend{color:#000}
 /* CSS Reset EOF */
 
 * { font-family:'Open sans', Arial, sans-serif; color:#555; }
-html { background-color:#e8e8e8; }
+html { /*background-color:#e8e8e8;*/ background-color:#cddee6; }
 .breaker { clear:both; }
 
 #main { margin:0 auto; text-align:center; }
 .content { width:981px; margin:0 auto; }
 #tagline { font-family:sans-serif; letter-spacing: -0.05555556em; color:white; font-weight:700; font-size:22px; font-style:italic; }
 
-#clouds-background { background: -webkit-linear-gradient(top, #32a3dd 0%, #e8e8e8 100%); background: -moz-linear-gradient(top, #32a3dd 0%, #e8e8e8 100%); background: -linear-gradient(top, #32a3dd 0%, #e8e8e8 100%); height:322px; overflow:hidden; position:relative; text-align:center; }
-#clouds-background .clouds-area { width:1000px; margin:0 auto; position:relative; }
+#clouds-background { background:url('banner-bg.png'); /*background: -webkit-linear-gradient(top, #32a3dd 0%, #e8e8e8 100%); background: -moz-linear-gradient(top, #32a3dd 0%, #e8e8e8 100%); background: -linear-gradient(top, #32a3dd 0%, #e8e8e8 100%); height:322px; overflow:hidden;*/ position:relative; text-align:center; }
+#clouds-background .clouds-area { background:url('background.png') no-repeat center; margin:0 auto; position:relative; height:318px; }
 #logo-and-form { position:absolute; top:0; width:100%;  }
 
 #logo-wrapper { }
