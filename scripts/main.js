@@ -14,11 +14,13 @@ $(function() {
 			return;
 		}
 
-		console.log('making ajax request');
 		$.ajax({
 			type: 'post',
 			url: '/get-info',
-			data: {videoId: _videoId},
+			data: {
+				videoId: _videoId,
+				useCache: true
+			},
 			success: function(res) {
 				if (!res) {
 					$(elem).find('.title').html('Error retrieving video data...');
@@ -65,7 +67,10 @@ $(function() {
 		$.ajax({
 			type: 'post',
 			url: '/get-info',
-			data: { videoUrl: videoUrl },
+			data: { 
+				videoUrl: videoUrl,
+				useCache: false
+			},
 			success: function(res) {
 				if (!res) return;
 				

@@ -25,6 +25,7 @@ app.get('/:videoId', function(req, res) {
 app.post('/get-info', function(req, res) {
 	var videoId;
 	var videoUrl = req.body.videoUrl;
+	var useCache = req.body.useCache;
 
 	if (videoUrl) {
 		// TODO: add proper error handling in case we can't extract the youtube id
@@ -35,18 +36,20 @@ app.post('/get-info', function(req, res) {
 		videoId = req.body.videoId;
 	}
 
-	// check if we have it in the cache
-	var cacheValue = cacheProvider.get(videoId);
-	if (cacheValue != null) {
-		console.log('retrieved video info from cache');
-		res.json(cacheValue);
+	if (useCache) {
+		var cacheValue = cacheProvider.get(videoId);
+		if (cacheValue != null) {
+			console.log('retrieved video info from cache');
+			res.json(cacheValue);
+		}
 	}
 
 	// retrieve video info from youtube api
 	var videoInfo = null;
 	try {
 		videoInfo = youtubeProvider.getVideoInfo(videoId, function(videoInfo) {
-			cacheProvider.put(videoId, videoInfo, 3);
+			if (useCache)
+				cacheProvider.put(videoId, videoInfo, 3);
 			res.json(videoInfo);
 		});
 	}
