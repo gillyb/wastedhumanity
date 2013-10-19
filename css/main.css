@@ -30,7 +30,7 @@ html { /*background-color:#e8e8e8;*/ background-color:#cddee6; }
 #logo-and-form { position:absolute; top:0; width:100%;  }
 
 #logo-wrapper { }
-#logo { font-size:24px; text-align:center; font-family:'Sniglet', Arial, sans-serif; color:white; font-size:54px; letter-spacing:-3px; padding-top:70px; }
+#logo { height:50px; font-size:24px; text-align:center; font-family:'Sniglet', Arial, sans-serif; color:white; font-size:54px; letter-spacing:-3px; padding-top:70px; }
 
 .title { color:#333; font-weight:bold; font-size:13px; }
 .thumbnail { float:left; }
@@ -46,8 +46,8 @@ html { /*background-color:#e8e8e8;*/ background-color:#cddee6; }
 
 #video-results { width:800px; margin:0 auto; border-radius:10px; padding:10px; background-color:#e8e8e8; margin-top:14px; border:solid 2px black; background-color:white; }
 #video-results .thumbnail { cursor:pointer; }
-#video-results .video-title { font-size:16px; font-weight:bold; cursor:pointer; }
-#video-results .video-info { padding-left:134px; text-align:left; font-size:14px; }
+#video-results .video-title { font-size:16px; font-weight:bold; cursor:pointer; margin-bottom:10px; }
+#video-results .video-info { padding-left:330px; text-align:left; font-size:14px; }
 #video-results .video-info span { font-weight:bold; font-size:14px; color:#32a3dd; }
 #video-results .video-info .wasted-time { font-weight:bold; font-size:22px; }
 #video-results .video-info .wasted-time span { font-size:22px; color:#32a3dd; }

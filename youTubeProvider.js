@@ -61,14 +61,16 @@ function extractVideoData(data) {
 	var videoName = videoObj['snippet']['title'];
 	var videoLength = videoObj['contentDetails']['duration'];
 	var videoViewCount = videoObj['statistics']['viewCount'];
-	var videoThumbnail = videoObj['snippet']['thumbnails']['default']['url'];
+	var videoDefaultThumbnail = videoObj['snippet']['thumbnails']['default']['url'];
+	var videoMediumThumbnail = videoObj['snippet']['thumbnails']['medium']['url'];
 
 	return {
 		id: videoId,
 		title: videoName.replace('\'', '\\\'').replace('"', '\"'),
 		length: videoLength.replace('\'', '\\\'').replace('"', '\"'),
 		views: videoViewCount.replace('\'', '\\\'').replace('"', '\"'),
-		thumbnail: videoThumbnail.replace('\'', '\\\'').replace('"', '\"')
+		thumbnail: videoDefaultThumbnail.replace('\'', '\\\'').replace('"', '\"'),
+		bigThumbnail: videoMediumThumbnail.replace('\'', '\\\'').replace('"', '\"')
 	};
 }
 
