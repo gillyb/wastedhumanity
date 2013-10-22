@@ -2,8 +2,8 @@
 var youtubeProvider = require('../youTubeProvider');
 var cacheProvider = require('../cacheProvider');
 
-var popularVideos = ['9bZkp7q19f0', 'kffacxfA7G4', '_OBlgSz8sSM', 'QK8mJJJvaes'];
-var favoriteVideos = ['QH2-TGUlwu4', 'jofNR_WkoCE', 'uVTfszppJl8', 'nlt5Wa13fFU'];
+var popularVideos = ['9bZkp7q19f0', 'kffacxfA7G4', 'fWNaR-rxAic', 'QK8mJJJvaes'];
+var favoriteVideos = ['QH2-TGUlwu4', 'jofNR_WkoCE', 'uVTfszppJl8', 'nlt5Wa13fFU', 'EIyixC9NsLI', 'Lf2db4hD6zI' ];
 
 app.get('/', function(req, res) {
 	res.render('homepage', {
