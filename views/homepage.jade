@@ -16,16 +16,18 @@ block body
 						// | WastedHumanity
 
 				div#tagline
-					| Because it's the 21st century and we have nothing better to do!...
+					| Cause what else is there to do in the 21st century?
 
 				div#check-video-form
 					div.instructions
 						| Paste a youtube url to see how much time humanity wasted on it
 					div#input-border
-						input#video-url(type='text', value='http://')
+						input#video-url(type='text', placeholder='http://youtube.com/watch?v=')
 						span#check-video
 							span.label BAM!
 							img.form-loader(style='display:none;',src='small_loader.gif')
+					div#error-message(style='display:none')
+						| Hey dumbass! That's not a real youtube url!
 		
 		div#video-results(style='display:none;',data-current-video='#{currentVideo}').content
 			div.thumbnail
@@ -56,7 +58,7 @@ block body
 							img.thumbnail(src='#{val.videoInfo.thumbnail}')
 							div.title #{val.videoInfo.title}
 							span.wasted-time(data-views='#{val.videoInfo.views}',data-length='#{val.videoInfo.length}')
-							span.view-movie Waste more time!
+							span.view-movie How much time?
 				div.breaker
 
 		div#popular-videos.content

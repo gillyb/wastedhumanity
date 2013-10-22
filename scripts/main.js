@@ -1,7 +1,7 @@
 
 $(function() {
 
-	$('#video-url').val('http://').focus();
+	$('#video-url').focus();
 
 	$('#popular-videos .popular-video').each(function(i, elem) {
 		var _videoId = $(elem).data('video-id');
@@ -10,7 +10,8 @@ $(function() {
 		if (hasInfo) {
 			var e = $(elem).find('.wasted-time');
 			var timeSpent = e.data('views') * getHours(e.data('length'));
-			e.html('Humanity wasted <span class="value">' + friendlyTimeString(timeSpent) + '</span> watching this!');
+			//e.html('Humanity wasted <span class="value">' + friendlyTimeString(timeSpent) + '</span> watching this!');
+			e.html('Humanity wasted too much time on this');
 			return;
 		}
 
@@ -55,6 +56,7 @@ $(function() {
 	$('#check-video').on('click', uploadVideo);
 
 	function uploadVideo() {
+		$('#video-results').hide();
 		var videoUrl = $('#video-url').val();
 		
 		if (videoUrl.trim() == '' || videoUrl.trim() == 'http://')
@@ -72,7 +74,11 @@ $(function() {
 				useCache: false
 			},
 			success: function(res) {
-				if (!res) return;
+				if (!res) {
+					$('#error-message').show();
+					$('#video-results').hide();
+					showButton();
+				}
 				
 				// {id, title, length, views, thumbnail}
 				var videoLength = getHours(res.length);
@@ -93,17 +99,22 @@ $(function() {
 				handleHistory(res.id);
 			},
 			error: function() {
-				
+				$('#error-message').show();
 			},
 			complete: function() {
-				$('#check-video').removeClass('loading');
-				$('#check-video .label').html('BAM!');
-				$('#check-video .form-loader').hide();
+				showButton();
 			}
 		});
 	}
 
+	function showButton() {
+		$('#check-video').removeClass('loading');
+		$('#check-video .label').html('BAM!');
+		$('#check-video .form-loader').hide();
+	}
+
 	$('#video-url').keyup(function(event) {
+		$('#error-message').hide();
 		// fix double 'http://' in url
 		if ($(this).val().indexOf('http://http://') == 0)
 			$(this).val($(this).val().substring(7));
@@ -115,7 +126,10 @@ $(function() {
 
 	$('.view-movie').on('click', function() {
 		var videoId = $(this).parents('.popular-video').data('video-id');
-		openYoutubeVideo(videoId);
+		//openYoutubeVideo(videoId);
+		var url = 'http://youtube.com/watch?v=' + videoId;
+		$('#video-url').val(url);
+		uploadVideo();
 	});
 	
 });
