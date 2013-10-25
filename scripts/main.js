@@ -240,7 +240,7 @@ function getHistoryFact(numYears) {
 }
 
 var _historyFacts = [
-	[4, 'It only took 4 years to paint the <a href="http://en.wikipedia.org/wiki/Mona_Lisa" target="_blank">Mona Lisa</a>!'],
+	[7, 'It only took 4 years to paint the <a href="http://en.wikipedia.org/wiki/Mona_Lisa" target="_blank">Mona Lisa</a>!'],
 	[10, 'The <a href="http://en.wikipedia.org/wiki/French_Revolution" target="_blank">French Revolution</a> only lasted 10 years!'],
 	[10, 'It only took 10 years to build the <a href="http://en.wikipedia.org/wiki/Colosseum" target="_blank">Colloseum</a> in Rome!'],
 	[21, 'It took only 21 years to build the <a href="http://en.wikipedia.org/wiki/Colosseum" target="_blank">Taj Mahal</a> in India!'],
