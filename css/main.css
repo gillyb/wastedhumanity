@@ -38,6 +38,7 @@ div.thumbnail { position:relative; }
 .thumbnail { float:left; }
 .thumbnail .overlay { position:absolute; display:none; bottom:0; height:40px; text-align:center; width:100%; background-color:#e8e8e8; opacity:0.8; color:black; padding-top:12px; text-decoration:underline; z-index:10; }
 
+#check-video .label { color:black; font-weight:bold; font-family:Helvetica, Arial; }
 #check-video-form { text-align:center; font-size:20px; margin-top:40px;}
 #check-video-form #input-border { border:solid 2px #555; border-radius:10px; padding:10px; width:650px; margin:0 auto; background-color:white; }
 #check-video-form .instructions { font-size:18px; }
