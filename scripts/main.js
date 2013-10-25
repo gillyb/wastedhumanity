@@ -86,8 +86,7 @@ $(function() {
 				var timeSpent = views * videoLength;
 
 				var video = $('#video-results');
-				video.find('.thumbnail').on('click', function() { openYoutubeVideo(res.id); });
-				video.find('.video-title').on('click', function() { openYoutubeVideo(res.id); });
+				video.data('current-video', res.id);
 				video.find('.movie-length span').html(getFriendlyDuration(res.length));
 				video.find('.movie-count span').html(numberWithCommas(res.views));
 				video.find('.wasted-time span').html(friendlyTimeString(timeSpent));
@@ -106,6 +105,10 @@ $(function() {
 			}
 		});
 	}
+
+	var videoResults = $('#video-results');
+	videoResults.on('click', '.thumbnail', function() { openYoutubeVideo(videoResults.data('current-video')); });
+	videoResults.on('click', '.video-title', function() { openYoutubeVideo(videoResults.data('current-video')); });
 
 	function showButton() {
 		$('#check-video').removeClass('loading');
@@ -126,7 +129,6 @@ $(function() {
 
 	$('.view-movie').on('click', function() {
 		var videoId = $(this).parents('.popular-video').data('video-id');
-		//openYoutubeVideo(videoId);
 		var url = 'http://youtube.com/watch?v=' + videoId;
 		$('#video-url').val(url);
 		uploadVideo();
@@ -145,7 +147,7 @@ function openYoutubeVideo(videoId) {
 	var backdrop = $('<div/>').addClass('youtube-player-backdrop');
 	backdrop.css({ 'zindex':990, 'position':'fixed', 'top':0, 'left':0, 'width':$(window).width(), 'height':$(window).height(), 'background-color':'#111', 'opacity':0.5 });
 	backdrop.on('click', function() {
-		$(this).remove();
+		$('.youtube-player-backdrop').remove();
 		$('.inner-youtube-player').remove();
 	});
 	backdrop.appendTo($('body'));
