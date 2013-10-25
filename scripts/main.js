@@ -38,7 +38,8 @@ $(function() {
 				$(elem).find('.title').html(res.title);
 
 				var timeSpent = res.views * getHours(res.length);
-				$(elem).find('.wasted-time').html('Humanity wasted <span class="value">' + friendlyTimeString(timeSpent) + '</span> watching this!');
+				$(elem).find('.wasted-time').html('Humanity wasted too much time on this');
+				//$(elem).find('.wasted-time').html('Humanity wasted <span class="value">' + friendlyTimeString(timeSpent) + '</span> watching this!');
 			},
 			error: function(e) {
 				$(elem).find('.title').html('Error retrieving video data...');
