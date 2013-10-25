@@ -30,8 +30,9 @@ block body
 						| Hey dumbass! That's not a real youtube url!
 		
 		div#video-results(style='display:none;',data-current-video='#{currentVideo}').content
-			div.thumbnail
+			div.thumbnail.thumbnail-container
 				img.thumbnail(src='video_thumbnail.png')
+				div.overlay Click to play
 			div.video-info
 				div.video-title
 				div.movie-length

@@ -110,6 +110,12 @@ $(function() {
 	videoResults.on('click', '.thumbnail', function() { openYoutubeVideo(videoResults.data('current-video')); });
 	videoResults.on('click', '.video-title', function() { openYoutubeVideo(videoResults.data('current-video')); });
 
+	videoResults.on('mouseover', '.thumbnail-container', function() {
+		videoResults.find('.overlay').slideDown('fast');
+	}).on('mouseout', '.thumbnail-container', function() {
+		videoResults.find('.overlay').slideUp('fast');
+	});
+
 	function showButton() {
 		$('#check-video').removeClass('loading');
 		$('#check-video .label').html('BAM!');
