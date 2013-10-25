@@ -110,9 +110,9 @@ $(function() {
 	videoResults.on('click', '.thumbnail', function() { openYoutubeVideo(videoResults.data('current-video')); });
 	videoResults.on('click', '.video-title', function() { openYoutubeVideo(videoResults.data('current-video')); });
 
-	videoResults.on('mouseover', '.thumbnail-container', function() {
+	videoResults.on('mouseenter', '.thumbnail-container', function() {
 		videoResults.find('.overlay').slideDown('fast');
-	}).on('mouseout', '.thumbnail-container', function() {
+	}).on('mouseleave', '.thumbnail-container', function() {
 		videoResults.find('.overlay').slideUp('fast');
 	});
 
@@ -138,6 +138,30 @@ $(function() {
 		var url = 'http://youtube.com/watch?v=' + videoId;
 		$('#video-url').val(url);
 		uploadVideo();
+	});
+
+	$('.about-link').on('click', function() {
+		var backdrop = $('<div/>').addClass('about-backdrop');
+		backdrop.css({ 'zindex':990, 'position':'fixed', 'top':0, 'left':0, 'width':$(window).width(), 'height':$(window).height(), 'background-color':'#111', 'opacity':0.5 });
+		backdrop.on('click', function() {
+			$('.about-backdrop').remove();
+			$('.about-modal').remove();
+		});
+		backdrop.appendTo($('body'));
+
+		$(document).keyup(function(e) {
+	  		if (e.keyCode == 27) { // escape key
+	  			$('.about-backdrop').remove();
+	  			$('.about-modal').remove();
+	  		}
+		});
+
+		var dialog = $('<div/>').addClass('about-modal');
+		var left = ($(window).width() / 2) - 260;
+		var top = ($(window).height() / 2) - 170;
+		dialog.css({ 'zindex':1000, 'display':'inline-block', 'width':560, 'height':315, 'position':'fixed', 'top':top, 'left':left });
+		dialog.html($('#about-content').html());
+		dialog.appendTo($('body'));
 	});
 	
 });
