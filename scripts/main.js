@@ -108,7 +108,7 @@ $(function() {
 	}
 
 	var videoResults = $('#video-results');
-	videoResults.on('click', '.thumbnail', function() { openYoutubeVideo(videoResults.data('current-video')); });
+	videoResults.on('click', 'img.thumbnail', function() { openYoutubeVideo(videoResults.data('current-video')); });
 	videoResults.on('click', '.video-title', function() { openYoutubeVideo(videoResults.data('current-video')); });
 
 	videoResults.on('mouseenter', '.thumbnail-container', function() {
@@ -194,7 +194,8 @@ function openYoutubeVideo(videoId) {
 	var left = ($(window).width() / 2) - 425;
 	var top = ($(window).height() / 2) - 240;
 	dialog.css({ 'zindex':1000, 'display':'inline-block', 'width':560, 'height':315, 'position':'fixed', 'top':top, 'left':left });
-	dialog.html('<object height="480" width="853"><param name="movie" value="http://www.youtube.com/v/'+videoId+'&autoplay=1" /><embed height="480" src="http://www.youtube.com/v/'+videoId+'&autoplay=1" type="application/x-shockwave-flash" width="853"></embed></object>');
+	//dialog.html('<object height="480" width="853"><param name="movie" value="http://www.youtube.com/v/'+videoId+'&autoplay=1" /><embed height="480" src="http://www.youtube.com/v/'+videoId+'&autoplay=1" type="application/x-shockwave-flash" width="853"></embed></object>');
+	dialog.html('<iframe allowfullscreen="" frameborder="0" height="480" src="http://www.youtube.com/embed/' + videoId + '?autoplay=1" width="853"></iframe>');
 	dialog.appendTo($('body'));
 }
 
