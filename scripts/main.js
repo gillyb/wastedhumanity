@@ -158,9 +158,9 @@ $(function() {
 		});
 
 		var dialog = $('<div/>').addClass('about-modal');
-		var left = ($(window).width() / 2) - 260;
-		var top = ($(window).height() / 2) - 170;
-		dialog.css({ 'zindex':1000, 'display':'inline-block', 'width':560, 'height':315, 'position':'fixed', 'top':top, 'left':left });
+		var left = ($(window).width() / 2) - 350;
+		var top = ($(window).height() / 2) - 210;
+		dialog.css({ 'zindex':1000, 'display':'inline-block', 'width':700, 'height':405, 'position':'fixed', 'top':top, 'left':left });
 		dialog.html($('#about-content').html());
 		dialog.appendTo($('body'));
 	});
