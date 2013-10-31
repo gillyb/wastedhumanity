@@ -93,7 +93,9 @@ $(function() {
 				video.find('.wasted-time span').html(friendlyTimeString(timeSpent));
 				video.find('.thumbnail').attr('src', res.bigThumbnail);
 				video.find('.video-title').html(res.title);
-				video.find('.fun-fact').html(' ' + getHistoryFact(timeSpent));
+
+				var yearsSpent = timeSpent / 24 / 365;
+				video.find('.fun-fact').html(' ' + getHistoryFact(yearsSpent));
 
 				video.slideDown();
 				handleHistory(res.id);
@@ -261,7 +263,7 @@ function numberWithCommas(x) {
 function getHistoryFact(numYears) {
 	try {
 		var shorterEvents = [];
-		_historyFacts.forEach(function(val) {
+		$.each(_historyFacts, function(index, val) {
 			if (val[0] <= numYears)
 				shorterEvents.push(val[1]);
 		});
@@ -269,7 +271,7 @@ function getHistoryFact(numYears) {
 		if (shorterEvents.length == 0)
 			return null;
 
-		return shorterEvents[Math.floor((Math.random() * 100) % (shorterEvents.length + 1))];
+		return shorterEvents[Math.floor((Math.random() * 100) % (shorterEvents.length))];
 	}
 	catch (e) {
 		return null;
