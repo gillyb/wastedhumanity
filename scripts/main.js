@@ -134,12 +134,23 @@ $(function() {
 	    }
 	});
 
+	var videoInfo = $('.video-info');
+	videoInfo.find('.title').on('click', function() {
+		showVideo($(this));
+	});
+	videoInfo.find('.thumbnail').on('click', function() {
+		showVideo($(this));
+	});
 	$('.view-movie').on('click', function() {
-		var videoId = $(this).parents('.popular-video').data('video-id');
+		showVideo($(this));
+	});
+
+	function showVideo(t) {
+		var videoId = t.parents('.popular-video').data('video-id');
 		var url = 'http://youtube.com/watch?v=' + videoId;
 		$('#video-url').val(url);
 		uploadVideo();
-	});
+	}
 
 	$('.about-link').on('click', function() {
 		var backdrop = $('<div/>').addClass('about-backdrop');

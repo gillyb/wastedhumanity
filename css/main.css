@@ -73,8 +73,8 @@ div.thumbnail { position:relative; }
 #popular-videos .popular-video.first { margin-right:15px; }
 #popular-videos .popular-video .view-movie { position:absolute; bottom:4px; right:4px; font-size:14px; padding:1px 12px; border-radius:4px; background-color:#ADE3FF; color:#333; text-shadow:none; cursor:pointer; text-decoration:none; }
 #popular-videos .popular-video .view-movie:hover { text-decoration:underline; }
-#popular-videos .popular-video .title { margin-top:6px; }
-#popular-videos .popular-video .thumbnail { border-top-left-radius: 6px; border-bottom-left-radius:6px; margin-right:10px; }
+#popular-videos .popular-video .title { margin-top:6px; cursor:pointer; }
+#popular-videos .popular-video .thumbnail { border-top-left-radius: 6px; border-bottom-left-radius:6px; margin-right:10px; cursor:pointer; }
 #popular-videos .popular-video .wasted-time .value { font-weight:bold; }
 #popular-videos .video-info { font-weight:normal; color:black; }
 
