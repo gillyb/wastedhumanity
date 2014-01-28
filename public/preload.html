@@ -15,10 +15,6 @@
 
 			if (method == 'iframe') {
 			
-				// Chrome - Works - http://www.webpagetest.org/result/131225_95_CD5/
-				// FF -  - http://www.webpagetest.org/result/131205_DD_D31/
-			
-				// Chrome
 				var iframe = document.createElement('iframe');
 				iframe.setAttribute("width", "0");
 				iframe.setAttribute("height", "0");
@@ -35,29 +31,29 @@
 				doc.writeln("<html><body></body></html>");
 				doc.close();
 				
-				var iFrameAddFile = function(filename) {
+				var iFrameAddCssFile = function(filename) {
 					var css = doc.createElement('link');
 					css.type = 'text/css';
 					css.rel = 'stylesheet';
 					css.href = filename;
 					doc.body.appendChild(css);
 				}
+
+				var iFrameAddJsFile = function(filename) {
+					var js = doc.createElement('script');
+					js.type = 'text/javascript';
+					js.src = filename;
+					doc.body.appendChild(js);
+				}
 				
-				iFrameAddFile('https:' + cssFile);
-				iFrameAddFile('http:' + cssFile);
+				iFrameAddCssFile('https:' + cssFile);
+				iFrameAddCssFile('http:' + cssFile);
 				
-				iFrameAddFile('http:' + jsFile);
-				iFrameAddFile('https:' + jsFile);
+				iFrameAddJsFile('http:' + jsFile);
+				iFrameAddJsFile('https:' + jsFile);
 			}
 			else if (method == 'image') {
 			
-				// Chrome - V - http://www.webpagetest.org/result/131205_1Z_E4W/
-				// FF - doesn't cache css files - http://www.webpagetest.org/result/131205_K7_E64/
-				// IE8 - doesn't cache anything! - 
-				// IE9 - doesn't cache anything! - http://www.webpagetest.org/result/131205_XR_E7H/
-				// IE10 - 
-			
-				// This works on FF & Chrome - Simple and elegant :)
 				new Image().src = 'https:' + cssFile;
 				new Image().src = 'http:' + cssFile;
 				
@@ -66,12 +62,6 @@
 				
 			}
 			else if (method == 'object') {
-				
-				// Chrome - V - http://www.webpagetest.org/result/131205_6G_EBH/
-				// FF - V - http://www.webpagetest.org/result/131205_H4_EAH/
-				// IE8 - doesn't cache https file - http://www.webpagetest.org/result/131205_C8_EEA/
-				// IE9 - doesn't cache any file - http://www.webpagetest.org/result/131205_3Y_EF9/
-				// IE10 - 
 				
 				var createObjectTag = function(filename) {
 					var o = document.createElement('object');
@@ -116,7 +106,7 @@
 			
 				var prefetchTag = function(filename) {
 					var link = document.createElement('link');
-					link.href = preload[i];
+					link.href = filename;
 					link.rel = "prefetch";
 					document.getElementsByTagName('head')[0].appendChild(link);
 				}
