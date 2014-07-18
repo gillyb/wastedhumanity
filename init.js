@@ -28,4 +28,4 @@ require('./controllers/mainController.js');
 require('./controllers/aboutController.js');
 
 // start listening...
-app.listen(6969);
+app.listen(80);
