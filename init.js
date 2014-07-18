@@ -28,4 +28,6 @@ require('./controllers/mainController.js');
 require('./controllers/aboutController.js');
 
 // start listening...
-app.listen(80);
+app.listen(Number(process.env.PORT || 5000)).on('error', function(ex) {
+	console.log(ex);
+});
