@@ -1,10 +1,31 @@
 {
   "name": "wastedhumanity",
   "description": "how much time did humanity waste on shit",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "express": "3.x",
     "jade": "*"
+  },
+  "main": "init.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gillyb/wastedhumanity.git"
+  },
+  "keywords": [
+    "wastedhumanity"
+  ],
+  "author": "Gilly Barr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gillyb/wastedhumanity/issues"
+  },
+  "homepage": "https://github.com/gillyb/wastedhumanity",
+  "engines": {
+    "node": "0.10.x"
   }
 }
