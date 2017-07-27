@@ -31,7 +31,7 @@ block body
 					div#error-message(style='display:none')
 						| Hey dumbass! That's not a real youtube url!
 		
-		div#video-results(style='display:none;',data-current-video='#{currentVideo}').content
+		div#video-results(style='display:none;',data-current-video=currentVideo).content
 			div.thumbnail.thumbnail-container
 				img.thumbnail(src='video_thumbnail.png')
 				div.overlay Click to play
@@ -59,18 +59,18 @@ block body
 				each val in videos
 					- i++;
 					if i % 2 == 0
-						span.popular-video(data-video-id='#{val.videoId}')
+						span.popular-video(data-video-id=val.videoId)
 							span.video-info
 								img.thumbnail(src='#{val.videoInfo.thumbnail}')
 								div.title #{val.videoInfo.title}
-								span.wasted-time(data-views='#{val.videoInfo.views}',data-length='#{val.videoInfo.length}')
+								span.wasted-time(data-views='#{val.videoInfo.views}',data-length=val.videoInfo.length)
 								a.view-movie(href='#') How much time?
 					else
-						span.first.popular-video(data-video-id='#{val.videoId}')
+						span.first.popular-video(data-video-id=val.videoId)
 							span.video-info
 								img.thumbnail(src='#{val.videoInfo.thumbnail}')
 								div.title #{val.videoInfo.title}
-								span.wasted-time(data-views='#{val.videoInfo.views}',data-length='#{val.videoInfo.length}')
+								span.wasted-time(data-views=val.videoInfo.views,data-length=val.videoInfo.length)
 								a.view-movie(href='#') How much time?
 							
 				div.breaker
@@ -82,18 +82,18 @@ block body
 				each val in favoriteVideos
 					- i++;
 					if i % 2 == 0
-						span.popular-video(data-video-id='#{val.videoId}')
+						span.popular-video(data-video-id=val.videoId)
 							span.video-info
-								img.thumbnail(src='#{val.videoInfo.thumbnail}')
+								img.thumbnail(src=val.videoInfo.thumbnail)
 								div.title #{val.videoInfo.title}
-								span.wasted-time(data-views='#{val.videoInfo.views}',data-length='#{val.videoInfo.length}')
+								span.wasted-time(data-views=val.videoInfo.views,data-length=val.videoInfo.length)
 								a.view-movie(href='#') How much time?
 					else
-						span.first.popular-video(data-video-id='#{val.videoId}')
+						span.first.popular-video(data-video-id=val.videoId)
 							span.video-info
-								img.thumbnail(src='#{val.videoInfo.thumbnail}')
+								img.thumbnail(src=val.videoInfo.thumbnail)
 								div.title #{val.videoInfo.title}
-								span.wasted-time(data-views='#{val.videoInfo.views}',data-length='#{val.videoInfo.length}')
+								span.wasted-time(data-views=val.videoInfo.views,data-length=val.videoInfo.length)
 								a.view-movie(href='#') How much time?
 				div.breaker
 

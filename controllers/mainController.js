@@ -11,7 +11,7 @@ app.get('/', function(req, res) {
 	res.render('homepage', {
 		videos: getHomePageVideos(popularVideos),
 		favoriteVideos: getHomePageVideos(favoriteVideos),
-		currentVideo:null
+		currentVideo: null
 	});
 });
 
@@ -43,6 +43,7 @@ app.post('/get-info', function(req, res) {
 		if (cacheValue != null) {
 			console.log('retrieved video info from cache');
 			res.json(cacheValue);
+			return;
 		}
 	}
 
@@ -53,11 +54,13 @@ app.post('/get-info', function(req, res) {
 			if (useCache)
 				cacheProvider.put(videoId, videoInfo, 3);
 			res.json(videoInfo);
+			return;
 		});
 	}
 	catch (e) {
 		// TODO: return some json response
 		res.json({error:'error getting video info'});
+		return;
 	}
 
 });
