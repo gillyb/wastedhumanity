@@ -9,11 +9,21 @@ var favoriteVideos = ['QH2-TGUlwu4', 'jofNR_WkoCE', 'uVTfszppJl8', 'nlt5Wa13fFU'
 app.get('/', function (req, res) {
     // youtubeProvider.getTrendingVideos(10).then((trendingVideos) => {
 
+<<<<<<< HEAD
+        res.render('homepage', {
+            videos: getHomePageVideos(popularVideos),
+            favoriteVideos: getHomePageVideos(favoriteVideos),
+            currentVideo: null
+        });
+    // });
+=======
+app.get('/', function(req, res) {
 	res.render('homepage.jade', {
 		videos: getHomePageVideos(popularVideos),
 		favoriteVideos: getHomePageVideos(favoriteVideos),
 		currentVideo:null
 	});
+>>>>>>> Update node_modules
 });
 
 app.get('/:videoId', function (req, res) {
