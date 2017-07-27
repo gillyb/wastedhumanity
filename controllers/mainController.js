@@ -8,7 +8,7 @@ var favoriteVideos = ['QH2-TGUlwu4', 'jofNR_WkoCE', 'uVTfszppJl8', 'nlt5Wa13fFU'
 					  'khCokQt--l4', 'xDj7gvc_dsA', 'nZcRU0Op5P4', 'lVmmYMwFj1I' ];
 
 app.get('/', function(req, res) {
-	res.render('homepage.jade', {
+	res.render('homepage', {
 		videos: getHomePageVideos(popularVideos),
 		favoriteVideos: getHomePageVideos(favoriteVideos),
 		currentVideo:null
