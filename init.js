@@ -1,18 +1,21 @@
 
-var express = require('express');
+const express = require('express');
+const bodyParser = require('body-parser');
+
 app = express();
 
 // configuration
-app.configure(function() {
+// app.configure(function() {
 	app.disable('x-powered-by');
 
 	app.set('env', 'development'); // TODO: this should be defined in process.env.NODE_ENV - don't know where this is though...
-	app.set('view engine', 'jade');
-	app.set('views', __dirname + '/views');
+	app.set('view engine', 'pug');
+	app.set('views', './views');
 
-	app.use(express.logger());
-	app.use(express.bodyParser());
-	app.use(express.methodOverride());
+	// app.use(express.logger());
+	app.use(bodyParser.json()); // for parsing application/json
+	app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+	// app.use(express.methodOverride());
 
 	// static libraries
 	app.use(express.static(__dirname + '/scripts'));
@@ -20,8 +23,8 @@ app.configure(function() {
 	app.use(express.static(__dirname + '/img'));
 	app.use(express.static(__dirname + '/public'));
 
-	app.use(app.router);
-});
+	// app.use(app.router);
+// });
 
 // controllers
 require('./controllers/mainController.js');
