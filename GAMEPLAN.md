@@ -2,7 +2,8 @@
 
 - [x] Update all modules
 - [x] Lock module versions
-- [] Remove general share buttons
+- [x] Remove general share buttons
+- [] Make unique page-title when viewing specific video
 - [] Remove 'how much time' button
 - [] Each video should redirect to it's own page
 - [] Display time details of video without having to push button
