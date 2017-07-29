@@ -40,7 +40,6 @@ html { /*background-color:#e8e8e8;*/ background-color:#cddee6; }
 #clouds-background .clouds-area { background:url('background.jpg') no-repeat center; margin:0 auto; position:relative; height:318px; }
 #logo-and-form { position:absolute; top:0; width:100%;  }
 
-#logo-wrapper { }
 #logo { height:50px; font-size:24px; text-align:center; font-family:'Sniglet', Arial, sans-serif; color:white; font-size:54px; letter-spacing:-3px; padding-top:70px; }
 
 .title { color:#333; font-weight:bold; font-size:13px; }

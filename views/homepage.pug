@@ -4,100 +4,104 @@ block head
 
 block body
 
-	div#main
+    div#main
 
-		div#clouds-background
-			div.clouds-area
+        div#clouds-background
+            div.clouds-area
 
-		div#logo-and-form
-			div.content
-				span.about-link-area
-					span.about-link About
-				div#logo-wrapper
-					div#logo
-						// | WastedHumanity
+        div#logo-and-form
+            div.content
+                span.about-link-area
+                    span.about-link About
+                div#logo-wrapper
+                    div#logo
+                        // | WastedHumanity
 
-				div#tagline
-					| Because what else is there to do in the 21st century?
+                div#tagline
+                    | Because what else is there to do in the 21st century?
 
-				div#check-video-form
-					div.instructions
-						| Paste a youtube url to see how much time humanity wasted on it
-					div#input-border
-						input#video-url(type='text', placeholder='http://youtube.com/watch?v=')
-						span#check-video
-							span.label BAM!
-							img.form-loader(style='display:none;',src='small_loader.gif')
-					div#error-message(style='display:none')
-						| Hey dumbass! That's not a real youtube url!
-		
-		div#video-results(style='display:none;',data-current-video=currentVideo).content
-			div.thumbnail.thumbnail-container
-				img.thumbnail(src='video_thumbnail.png')
-				div.overlay Click to play
-			div.video-info
-				div.video-title
-				div.movie-length
-					| This video is 
-					span
-					|  long.
-				div.movie-count
-					| It was watched 
-					span
-					|  times.
-				div.wasted-time
-					| Humanity wasted 
-					span
-					|  watching this!
-				div.fun-fact
-				div(style='clear:both;')
+                div#check-video-form
+                    div.instructions
+                        | Paste a youtube url to see how much time humanity wasted on it
+                    div#input-border
+                        input#video-url(type='text', placeholder='http://youtube.com/watch?v=')
+                        span#check-video
+                            span.label BAM!
+                            img.form-loader(style='display:none;',src='small_loader.gif')
+                    div#error-message(style='display:none')
+                        | Hey dumbass! That's not a real youtube url!
 
-		div#popular-videos.content
-			| Most popular
-			div.videos
-				- var i=0;
-				each val in videos
-					- i++;
-					if i % 2 == 0
-						span.popular-video(data-video-id=val.videoId)
-							span.video-info
-								img.thumbnail(src='#{val.videoInfo.thumbnail}')
-								div.title #{val.videoInfo.title}
-								span.wasted-time(data-views='#{val.videoInfo.views}',data-length=val.videoInfo.length)
-								a.view-movie(href='#') How much time?
-					else
-						span.first.popular-video(data-video-id=val.videoId)
-							span.video-info
-								img.thumbnail(src='#{val.videoInfo.thumbnail}')
-								div.title #{val.videoInfo.title}
-								span.wasted-time(data-views=val.videoInfo.views,data-length=val.videoInfo.length)
-								a.view-movie(href='#') How much time?
-							
-				div.breaker
+        div#video-results(style='display:none;',data-current-video=currentVideo).content
+            div.thumbnail.thumbnail-container
+                img.thumbnail(src='video_thumbnail.png')
+                div.overlay Click to play
+            div.video-info
+                div.video-title
+                div.movie-length
+                    | This video is
+                    span
+                    |  long.
+                div.movie-count
+                    | It was watched
+                    span
+                    |  times.
+                div.wasted-time
+                    | Humanity wasted
+                    span
+                    |  watching this!
+                div.fun-fact
+                div(style='clear:both;')
 
-		div#popular-videos.content
-			| Our favorites
-			div.videos
-				- var i=0;
-				each val in favoriteVideos
-					- i++;
-					if i % 2 == 0
-						span.popular-video(data-video-id=val.videoId)
-							span.video-info
-								img.thumbnail(src=val.videoInfo.thumbnail)
-								div.title #{val.videoInfo.title}
-								span.wasted-time(data-views=val.videoInfo.views,data-length=val.videoInfo.length)
-								a.view-movie(href='#') How much time?
-					else
-						span.first.popular-video(data-video-id=val.videoId)
-							span.video-info
-								img.thumbnail(src=val.videoInfo.thumbnail)
-								div.title #{val.videoInfo.title}
-								span.wasted-time(data-views=val.videoInfo.views,data-length=val.videoInfo.length)
-								a.view-movie(href='#') How much time?
-				div.breaker
+        div#popular-videos.content
+            | Most popular
+            div.videos
+                - var i=0;
+                each val in videos
+                    - i++;
+                    if i % 2 == 0
+                        span.popular-video(data-video-id=val.videoId)
+                            span.video-info
+                                a(href='/' + val.videoId)
+                                    img.thumbnail(src=val.videoInfo.thumbnail)
+                                div.title #{val.videoInfo.title}
+                                span.wasted-time(data-views='#{val.videoInfo.views}',data-length=val.videoInfo.length)
+                                a.view-movie(href='/' + val.videoId) How much time?
+                    else
+                        span.first.popular-video(data-video-id=val.videoId)
+                            span.video-info
+                                a(href='/' + val.videoId)
+                                    img.thumbnail(src=val.videoInfo.thumbnail)
+                                div.title #{val.videoInfo.title}
+                                span.wasted-time(data-views=val.videoInfo.views,data-length=val.videoInfo.length)
+                                a.view-movie(href='/' + val.videoId) How much time?
+
+                div.breaker
+
+        div#popular-videos.content
+            | Our favorites
+            div.videos
+                - var i=0;
+                each val in favoriteVideos
+                    - i++;
+                    if i % 2 == 0
+                        span.popular-video(data-video-id=val.videoId)
+                            span.video-info
+                                a(href='/' + val.videoId)
+                                    img.thumbnail(src=val.videoInfo.thumbnail)
+                                div.title #{val.videoInfo.title}
+                                span.wasted-time(data-views=val.videoInfo.views,data-length=val.videoInfo.length)
+                                a.view-movie(href='/' + val.videoId) How much time?
+                    else
+                        span.first.popular-video(data-video-id=val.videoId)
+                            span.video-info
+                                a(href='/' + val.videoId)
+                                    img.thumbnail(src=val.videoInfo.thumbnail)
+                                div.title #{val.videoInfo.title}
+                                span.wasted-time(data-views=val.videoInfo.views,data-length=val.videoInfo.length)
+                                a.view-movie(href='/' + val.videoId) How much time?
+                div.breaker
 
 
-				div(style='clear:both;')
+                div(style='clear:both;')
 
-		include about
+        include about
