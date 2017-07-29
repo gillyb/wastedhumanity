@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d703be5e-5932-47b4-92a5-154d0db4e5d1" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GAMEPLAN.md" afterPath="$PROJECT_DIR$/GAMEPLAN.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/mainController.js" afterPath="$PROJECT_DIR$/controllers/mainController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/youTubeProvider.js" afterPath="$PROJECT_DIR$/youTubeProvider.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,12 +24,12 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GAMEPLAN.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GAMEPLAN.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GAMEPLAN.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="34">
-                <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <first_editor relative-caret-position="68">
+                <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -34,9 +40,11 @@
       <file leaf-file-name="mainController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
-              <caret line="59" column="15" lean-forward="true" selection-start-line="59" selection-start-column="15" selection-end-line="59" selection-end-column="15" />
-              <folding />
+            <state relative-caret-position="187">
+              <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+              <folding>
+                <marker date="1501324324000" expanded="true" signature="520:796" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,8 +62,8 @@
       <file leaf-file-name="init.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/init.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+            <state relative-caret-position="349">
+              <caret line="28" column="4" lean-forward="true" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -89,16 +97,21 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
               <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1500534872000" expanded="true" signature="225:396" ph="{&quot;method&quot;: 'GET'...}" />
+                <marker date="1500534872000" expanded="true" signature="486:583" ph="{...}" />
+                <marker date="1500534872000" expanded="true" signature="546:579" ph="{...}" />
+                <marker date="1500534872000" expanded="true" signature="611:632" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="youTubeProvider.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="youTubeProvider.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/youTubeProvider.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="39" column="35" lean-forward="true" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+            <state relative-caret-position="189">
+              <caret line="59" column="28" lean-forward="false" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -108,13 +121,13 @@
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+              <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
               <folding>
-                <marker date="1501185770000" expanded="true" signature="150:233" ph="{...}" />
-                <marker date="1501185770000" expanded="true" signature="294:357" ph="{&quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;...}" />
-                <marker date="1501185770000" expanded="true" signature="375:457" ph="{&quot;type&quot;: &quot;git&quot;...}" />
-                <marker date="1501185770000" expanded="true" signature="473:499" ph="[...]" />
-                <marker date="1501185770000" expanded="true" signature="557:623" ph="{&quot;url&quot;: &quot;https://github.com/gillyb/wastedhumanity/issues&quot;...}" />
+                <marker date="1501249868000" expanded="true" signature="150:283" ph="{...}" />
+                <marker date="1501249868000" expanded="true" signature="344:407" ph="{&quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;...}" />
+                <marker date="1501249868000" expanded="true" signature="425:507" ph="{&quot;type&quot;: &quot;git&quot;...}" />
+                <marker date="1501249868000" expanded="true" signature="523:549" ph="[...]" />
+                <marker date="1501249868000" expanded="true" signature="607:673" ph="{&quot;url&quot;: &quot;https://github.com/gillyb/wastedhumanity/issues&quot;...}" />
               </folding>
             </state>
           </provider>
@@ -127,6 +140,17 @@
       <find>jad</find>
       <find>jade</find>
       <find>youtube</find>
+      <find>gettr</find>
+      <find>body.items.map((video) =&gt; extractVideoData(video)</find>
+      <find>body.items.map((video) =&gt; extractVideoData(video</find>
+      <find>body.items.map((video) =&gt; extractVideoData(vide</find>
+      <find>body.items.map((video) =&gt; extractVideoData(vid</find>
+      <find>body.items.map((video) =&gt; extractVideoData(vi</find>
+      <find>body.items.map((video) =&gt; extractVideoData(v</find>
+      <find>body.items.map((video) =&gt; extractVideoData(</find>
+      <find>body.items.map((video) =&gt; extractVideoData</find>
+      <find>extractVideoData</find>
+      <find>body.items.map((video) =&gt; extractVideoData(video))</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -139,14 +163,21 @@
         <option value="$PROJECT_DIR$/init.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/views/homepage.pug" />
-        <option value="$PROJECT_DIR$/controllers/mainController.js" />
         <option value="$PROJECT_DIR$/GAMEPLAN.md" />
+        <option value="$PROJECT_DIR$/controllers/mainController.js" />
+        <option value="$PROJECT_DIR$/youTubeProvider.js" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
     <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>true</other-services-enabled>
   </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
@@ -159,6 +190,26 @@
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="873" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>ECMAScript 6 migration aidsJavaScript</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -189,20 +240,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wastedhumanity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wastedhumanity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -213,6 +250,11 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="reforma&#9;ACTION&#9;ReformatCode" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="javascript.nodejs.core.library.configured.version" value="8.2.1" />
+    <property name="JavaScriptPreferStrict" value="false" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -313,6 +355,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="d703be5e-5932-47b4-92a5-154d0db4e5d1" name="Default" comment="" />
@@ -325,7 +370,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2544000" />
+    <option name="totallyTimeSpent" value="6503000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -338,8 +383,8 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290653" sideWeight="0.49753347" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290653" sideWeight="0.49753347" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4084507" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -367,7 +412,22 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/controllers/mainController.js</url>
+          <line>11</line>
+          <properties />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/youTubeProvider.js</url>
+          <line>36</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="9" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -429,7 +489,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1500534872000" expanded="true" signature="225:396" ph="{&quot;method&quot;: 'GET'...}" />
+            <marker date="1500534872000" expanded="true" signature="486:583" ph="{...}" />
+            <marker date="1500534872000" expanded="true" signature="546:579" ph="{...}" />
+            <marker date="1500534872000" expanded="true" signature="611:632" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -446,11 +511,11 @@
         <state relative-caret-position="204">
           <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
           <folding>
-            <marker date="1501185770000" expanded="true" signature="150:233" ph="{...}" />
-            <marker date="1501185770000" expanded="true" signature="294:357" ph="{&quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;...}" />
-            <marker date="1501185770000" expanded="true" signature="375:457" ph="{&quot;type&quot;: &quot;git&quot;...}" />
-            <marker date="1501185770000" expanded="true" signature="473:499" ph="[...]" />
-            <marker date="1501185770000" expanded="true" signature="557:623" ph="{&quot;url&quot;: &quot;https://github.com/gillyb/wastedhumanity/issues&quot;...}" />
+            <marker date="1501249868000" expanded="true" signature="150:283" ph="{...}" />
+            <marker date="1501249868000" expanded="true" signature="344:407" ph="{&quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;...}" />
+            <marker date="1501249868000" expanded="true" signature="425:507" ph="{&quot;type&quot;: &quot;git&quot;...}" />
+            <marker date="1501249868000" expanded="true" signature="523:549" ph="[...]" />
+            <marker date="1501249868000" expanded="true" signature="607:673" ph="{&quot;url&quot;: &quot;https://github.com/gillyb/wastedhumanity/issues&quot;...}" />
           </folding>
         </state>
       </provider>
@@ -475,7 +540,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
           <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-          <folding />
+          <folding>
+            <marker date="1501324324000" expanded="true" signature="520:796" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -561,7 +628,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1500534872000" expanded="true" signature="225:396" ph="{&quot;method&quot;: 'GET'...}" />
+            <marker date="1500534872000" expanded="true" signature="486:583" ph="{...}" />
+            <marker date="1500534872000" expanded="true" signature="546:579" ph="{...}" />
+            <marker date="1500534872000" expanded="true" signature="611:632" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -578,11 +650,11 @@
         <state relative-caret-position="204">
           <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
           <folding>
-            <marker date="1501185770000" expanded="true" signature="150:233" ph="{...}" />
-            <marker date="1501185770000" expanded="true" signature="294:357" ph="{&quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;...}" />
-            <marker date="1501185770000" expanded="true" signature="375:457" ph="{&quot;type&quot;: &quot;git&quot;...}" />
-            <marker date="1501185770000" expanded="true" signature="473:499" ph="[...]" />
-            <marker date="1501185770000" expanded="true" signature="557:623" ph="{&quot;url&quot;: &quot;https://github.com/gillyb/wastedhumanity/issues&quot;...}" />
+            <marker date="1501249868000" expanded="true" signature="150:283" ph="{...}" />
+            <marker date="1501249868000" expanded="true" signature="344:407" ph="{&quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;...}" />
+            <marker date="1501249868000" expanded="true" signature="425:507" ph="{&quot;type&quot;: &quot;git&quot;...}" />
+            <marker date="1501249868000" expanded="true" signature="523:549" ph="[...]" />
+            <marker date="1501249868000" expanded="true" signature="607:673" ph="{&quot;url&quot;: &quot;https://github.com/gillyb/wastedhumanity/issues&quot;...}" />
           </folding>
         </state>
       </provider>
@@ -607,7 +679,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
           <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-          <folding />
+          <folding>
+            <marker date="1501324324000" expanded="true" signature="520:796" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -658,20 +732,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1500534872000" expanded="true" signature="225:396" ph="{&quot;method&quot;: 'GET'...}" />
+            <marker date="1500534872000" expanded="true" signature="486:583" ph="{...}" />
+            <marker date="1500534872000" expanded="true" signature="546:579" ph="{...}" />
+            <marker date="1500534872000" expanded="true" signature="611:632" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+          <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
           <folding>
-            <marker date="1501185770000" expanded="true" signature="150:233" ph="{...}" />
-            <marker date="1501185770000" expanded="true" signature="294:357" ph="{&quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;...}" />
-            <marker date="1501185770000" expanded="true" signature="375:457" ph="{&quot;type&quot;: &quot;git&quot;...}" />
-            <marker date="1501185770000" expanded="true" signature="473:499" ph="[...]" />
-            <marker date="1501185770000" expanded="true" signature="557:623" ph="{&quot;url&quot;: &quot;https://github.com/gillyb/wastedhumanity/issues&quot;...}" />
+            <marker date="1501249868000" expanded="true" signature="150:283" ph="{...}" />
+            <marker date="1501249868000" expanded="true" signature="344:407" ph="{&quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;...}" />
+            <marker date="1501249868000" expanded="true" signature="425:507" ph="{&quot;type&quot;: &quot;git&quot;...}" />
+            <marker date="1501249868000" expanded="true" signature="523:549" ph="[...]" />
+            <marker date="1501249868000" expanded="true" signature="607:673" ph="{&quot;url&quot;: &quot;https://github.com/gillyb/wastedhumanity/issues&quot;...}" />
           </folding>
         </state>
       </provider>
@@ -692,22 +771,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/youTubeProvider.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="39" column="35" lean-forward="true" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/init.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/express/lib/response.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -716,22 +779,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
+    <entry file="file://$PROJECT_DIR$/GAMEPLAN.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="68">
+            <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/init.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="59" column="15" lean-forward="true" selection-start-line="59" selection-start-column="15" selection-end-line="59" selection-end-column="15" />
+        <state relative-caret-position="349">
+          <caret line="28" column="4" lean-forward="true" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GAMEPLAN.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="34">
-            <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <folding>
+            <marker date="1501324324000" expanded="true" signature="520:796" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/youTubeProvider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="59" column="28" lean-forward="false" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
