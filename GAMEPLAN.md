@@ -1,5 +1,7 @@
 ### GAMEPLAN
 
+- [] Update all modules
+- [] Lock module versions
 - [x] Update all modules
 - [x] Lock module versions
 - [x] Remove general share buttons
