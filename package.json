@@ -4,18 +4,11 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
     "bluebird": "3.5.0",
     "body-parser": "1.17.2",
     "express": "4.15.3",
-    "pug": "2.0.0-rc.2"
     "pug": "2.0.0-rc.2",
     "request": "2.81.0"
-=======
-    "body-parser": "1.17.2",
-    "express": "4.15.3",
-    "pug": "2.0.0-rc.2"
->>>>>>> Update node_modules
   },
   "main": "init.js",
   "devDependencies": {},
