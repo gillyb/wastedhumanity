@@ -65,7 +65,7 @@ block body
                                     img.thumbnail(src=val.videoInfo.thumbnail)
                                 div.title #{val.videoInfo.title}
                                 span.wasted-time(data-views='#{val.videoInfo.views}',data-length=val.videoInfo.length)
-                                a.view-movie(href='/' + val.videoId) How much time?
+                                a.view-movie(href='/' + val.videoId + '/' + val.videoInfo.urlTitle) How much time?
                     else
                         span.first.popular-video(data-video-id=val.videoId)
                             span.video-info
@@ -73,7 +73,7 @@ block body
                                     img.thumbnail(src=val.videoInfo.thumbnail)
                                 div.title #{val.videoInfo.title}
                                 span.wasted-time(data-views=val.videoInfo.views,data-length=val.videoInfo.length)
-                                a.view-movie(href='/' + val.videoId) How much time?
+                                a.view-movie(href='/' + val.videoId + '/' + val.videoInfo.urlTitle) How much time?
 
                 div.breaker
 
@@ -90,7 +90,7 @@ block body
                                     img.thumbnail(src=val.videoInfo.thumbnail)
                                 div.title #{val.videoInfo.title}
                                 span.wasted-time(data-views=val.videoInfo.views,data-length=val.videoInfo.length)
-                                a.view-movie(href='/' + val.videoId) How much time?
+                                a.view-movie(href='/' + val.videoId + '/' + val.videoInfo.urlTitle) How much time?
                     else
                         span.first.popular-video(data-video-id=val.videoId)
                             span.video-info
@@ -98,7 +98,7 @@ block body
                                     img.thumbnail(src=val.videoInfo.thumbnail)
                                 div.title #{val.videoInfo.title}
                                 span.wasted-time(data-views=val.videoInfo.views,data-length=val.videoInfo.length)
-                                a.view-movie(href='/' + val.videoId) How much time?
+                                a.view-movie(href='/' + val.videoId + '/' + val.videoInfo.urlTitle) How much time?
                 div.breaker
 
 

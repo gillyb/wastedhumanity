@@ -1,6 +1,6 @@
 const request = require('request');
 const Promise = require('bluebird');
-
+const utils = require('./utils');
 
 var youtubeApiKey = 'AIzaSyA0xWbm5Q7SF5aFZQJ8EGmb6fNc8cjQEwg';
 
@@ -67,16 +67,17 @@ var _getVideoInfo = function (videoId, callback) {
 };
 
 function extractVideoData(videoObj) {
-    var videoId = videoObj['id'];
-    var videoName = videoObj['snippet']['title'];
-    var videoLength = videoObj['contentDetails']['duration'];
-    var videoViewCount = videoObj['statistics']['viewCount'];
-    var videoDefaultThumbnail = videoObj['snippet']['thumbnails']['default']['url'];
-    var videoMediumThumbnail = videoObj['snippet']['thumbnails']['medium']['url'];
+    let videoId = videoObj['id'];
+    let videoName = videoObj['snippet']['title'];
+    let videoLength = videoObj['contentDetails']['duration'];
+    let videoViewCount = videoObj['statistics']['viewCount'];
+    let videoDefaultThumbnail = videoObj['snippet']['thumbnails']['default']['url'];
+    let videoMediumThumbnail = videoObj['snippet']['thumbnails']['medium']['url'];
 
     return {
         id: videoId,
         title: videoName.replace('\'', '\\\'').replace('"', '\"'),
+        urlTitle: utils.getSlug(videoName),
         length: videoLength.replace('\'', '\\\'').replace('"', '\"'),
         views: videoViewCount.replace('\'', '\\\'').replace('"', '\"'),
         thumbnail: videoDefaultThumbnail.replace('\'', '\\\'').replace('"', '\"'),
