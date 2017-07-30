@@ -14,6 +14,7 @@ app.get('/', function (req, res) {
 		favoriteVideos: getHomePageVideos(favoriteVideos),
 		currentVideo:null
 	});
+
 });
 
 app.get('/:videoId', function (req, res) {
