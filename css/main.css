@@ -42,7 +42,7 @@ html { /*background-color:#e8e8e8;*/ background-color:#cddee6; }
 
 #logo { height:50px; font-size:24px; text-align:center; font-family:'Sniglet', Arial, sans-serif; color:white; font-size:54px; letter-spacing:-3px; padding-top:70px; }
 
-.title { color:#333; font-weight:bold; font-size:13px; }
+.title, #products .product .name { color:#333; font-weight:bold; font-size:13px; }
 div.thumbnail { position:relative; }
 .thumbnail { float:left; }
 .thumbnail .overlay { position:absolute; display:none; bottom:0; height:40px; text-align:center; width:100%; background-color:#e8e8e8; opacity:0.8; color:black; padding-top:12px; text-decoration:underline; z-index:10; }
@@ -66,15 +66,17 @@ div.thumbnail { position:relative; }
 #video-results .video-info .wasted-time span { font-size:30px; color:#32a3dd; }
 #video-results .video-info .fun-fact { font-size:20px; }
 
-#popular-videos { text-align:left; margin-top:30px; font-size:26px; text-shadow:white 0 1px 0; }
-#popular-videos .videos { margin-top:10px; }
-#popular-videos .popular-video { display:inline-block; float:left; width:481px; margin-bottom:16px; border:1px solid #d9d9d9; border-radius:6px; background-color:white; font-size:16px; position:relative; }
+.half-column { display: inline-block; width: 50%; vertical-align: top; }
+#popular-videos, #products { text-align:left; margin-top:30px; font-size:22px; text-shadow:white 0 1px 0; }
+#popular-videos .videos, #products .products { margin-top:10px; }
+#popular-videos .popular-video, #products .product { display:inline-block; float:left; width:481px; margin-bottom:16px; border:1px solid #d9d9d9; border-radius:6px; background-color:white; font-size:16px; position:relative; }
 #popular-videos .popular-video.first { margin-right:15px; }
 #popular-videos .popular-video .view-movie { position:absolute; bottom:4px; right:4px; font-size:14px; padding:1px 12px; border-radius:4px; background-color:#ADE3FF; color:#333; text-shadow:none; cursor:pointer; text-decoration:none; }
 #popular-videos .popular-video .view-movie:hover { text-decoration:underline; }
-#popular-videos .popular-video .title { margin-top:6px; cursor:pointer; }
-#popular-videos .popular-video .thumbnail { border-top-left-radius: 6px; border-bottom-left-radius:6px; margin-right:10px; cursor:pointer; }
+#popular-videos .popular-video .title, #products .product .name { margin-top:6px; cursor:pointer; }
+#popular-videos .popular-video .thumbnail, #products .product .thumbnail { border-top-left-radius: 6px; border-bottom-left-radius:6px; margin-right:10px; cursor:pointer; width: 66px; }
 #popular-videos .popular-video .wasted-time .value { font-weight:bold; }
+#products .product .description { font-weight: normal; }
 #popular-videos .video-info { font-weight:normal; color:black; }
 
 

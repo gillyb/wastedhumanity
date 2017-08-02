@@ -52,56 +52,43 @@ block body
                 div.fun-fact
                 div(style='clear:both;')
 
-        div#popular-videos.content
-            | Most popular
-            div.videos
-                - var i=0;
-                each val in videos
-                    - i++;
-                    if i % 2 == 0
-                        span.popular-video(data-video-id=val.videoId)
-                            span.video-info
-                                a(href='/' + val.videoId)
-                                    img.thumbnail(src=val.videoInfo.thumbnail)
-                                div.title #{val.videoInfo.title}
-                                span.wasted-time(data-views='#{val.videoInfo.views}',data-length=val.videoInfo.length)
-                                a.view-movie(href='/' + val.videoId + '/' + val.videoInfo.urlTitle) How much time?
-                    else
-                        span.first.popular-video(data-video-id=val.videoId)
-                            span.video-info
-                                a(href='/' + val.videoId)
-                                    img.thumbnail(src=val.videoInfo.thumbnail)
-                                div.title #{val.videoInfo.title}
-                                span.wasted-time(data-views=val.videoInfo.views,data-length=val.videoInfo.length)
-                                a.view-movie(href='/' + val.videoId + '/' + val.videoInfo.urlTitle) How much time?
-
-                div.breaker
-
-        div#popular-videos.content
-            | Our favorites
-            div.videos
-                - var i=0;
-                each val in favoriteVideos
-                    - i++;
-                    if i % 2 == 0
-                        span.popular-video(data-video-id=val.videoId)
-                            span.video-info
-                                a(href='/' + val.videoId)
-                                    img.thumbnail(src=val.videoInfo.thumbnail)
-                                div.title #{val.videoInfo.title}
-                                span.wasted-time(data-views=val.videoInfo.views,data-length=val.videoInfo.length)
-                                a.view-movie(href='/' + val.videoId + '/' + val.videoInfo.urlTitle) How much time?
-                    else
-                        span.first.popular-video(data-video-id=val.videoId)
-                            span.video-info
-                                a(href='/' + val.videoId)
-                                    img.thumbnail(src=val.videoInfo.thumbnail)
-                                div.title #{val.videoInfo.title}
-                                span.wasted-time(data-views=val.videoInfo.views,data-length=val.videoInfo.length)
-                                a.view-movie(href='/' + val.videoId + '/' + val.videoInfo.urlTitle) How much time?
-                div.breaker
+        div.content
+            div.half-column
+                div#popular-videos
+                    | Videos :: Currently trending
+                    div.videos
+                        each val in videos
+                            span.popular-video(data-video-id=val.videoId)
+                                span.video-info
+                                    a(href='/' + val.videoId)
+                                        img.thumbnail(src=val.videoInfo.thumbnail)
+                                    div.title #{val.videoInfo.title}
+                                    span.wasted-time(data-views='#{val.videoInfo.views}',data-length=val.videoInfo.length)
+                                    a.view-movie(href='/' + val.videoId + '/' + val.videoInfo.urlTitle) How much time?
 
 
-                div(style='clear:both;')
+                div#popular-videos
+                    | Videos :: All time popular
+                    div.videos
+                        each val in favoriteVideos
+                            span.popular-video(data-video-id=val.videoId)
+                                span.video-info
+                                    a(href='/' + val.videoId)
+                                        img.thumbnail(src=val.videoInfo.thumbnail)
+                                    div.title #{val.videoInfo.title}
+                                    span.wasted-time(data-views=val.videoInfo.views,data-length=val.videoInfo.length)
+                                    a.view-movie(href='/' + val.videoId + '/' + val.videoInfo.urlTitle) How much time?
+
+            div.half-column
+                div#products
+                    | Products :: Random crazy stuff
+                    div.products
+                        each product in products
+                            span.product
+                                span.product-info
+                                    a(href=product.url)
+                                        img.thumbnail(src=product.img)
+                                    div.name #{product.name}
+                                    div.description #{product.description}
 
         include about
