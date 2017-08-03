@@ -18,4 +18,8 @@
 - [] Create twitter feed
 - [] Create facebook page  
 
+- [] Convert css to *.less
+- [] Minify static resources
+- [] Cache static resources
+- [] Make logo clickable and go to homepage
 - [] classic.wastedhumanity.com - With the classic homepage
