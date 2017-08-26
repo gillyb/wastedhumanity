@@ -87,6 +87,7 @@ const products = [
     }
 ];
 
+var defaultPageTitle = 'The time humanity wasted on nonsense';
 app.get('/', function (req, res) {
     // youtubeProvider.getTrendingVideos(10).then((trendingVideos) => {
 
@@ -94,7 +95,8 @@ app.get('/', function (req, res) {
 		videos: getHomePageVideos(popularVideos),
 		favoriteVideos: getHomePageVideos(favoriteVideos),
 		currentVideo: null,
-        products: products
+        products: products,
+        pageTitle: defaultPageTitle
 	});
 
 });
@@ -105,7 +107,8 @@ app.get('/:videoId', (req, res) => {
         videos: getHomePageVideos(popularVideos),
         favoriteVideos: getHomePageVideos(favoriteVideos),
         currentVideo: videoId,
-        products: products
+        products: products,
+        pageTitle: defaultPageTitle
     });
 });
 app.get('/:videoId/:videoName', (req, res) => {
@@ -114,7 +117,8 @@ app.get('/:videoId/:videoName', (req, res) => {
         videos: getHomePageVideos(popularVideos),
         favoriteVideos: getHomePageVideos(favoriteVideos),
         currentVideo: videoId,
-        products: products
+        products: products,
+        pageTitle: req.params.videoName
     });
 });
 
