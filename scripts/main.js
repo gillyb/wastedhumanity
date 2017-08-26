@@ -129,17 +129,6 @@ $(function () {
             uploadVideo();
     });
 
-    var videoInfo = $('.video-info');
-    videoInfo.find('.title').on('click', function () {
-        showVideo($(this));
-    });
-    // videoInfo.find('.thumbnail').on('click', function () {
-    //     showVideo($(this));
-    // });
-    // $('.view-movie').on('click', function () {
-    //     showVideo($(this));
-    // });
-
     function showVideo(t) {
         var videoId = t.parents('.popular-video').data('video-id');
         var url = 'http://youtube.com/watch?v=' + videoId;

@@ -62,7 +62,8 @@ block body
                                 span.video-info
                                     a(href='/' + val.videoId)
                                         img.thumbnail(src=val.videoInfo.thumbnail)
-                                    div.title #{val.videoInfo.title}
+                                    div.title
+                                        a(href='/' + val.videoId + '/' + val.videoInfo.urlTitle) #{val.videoInfo.title}
                                     span.wasted-time(data-views='#{val.videoInfo.views}',data-length=val.videoInfo.length)
                                     a.view-movie(href='/' + val.videoId + '/' + val.videoInfo.urlTitle) How much time?
 
@@ -75,7 +76,8 @@ block body
                                 span.video-info
                                     a(href='/' + val.videoId)
                                         img.thumbnail(src=val.videoInfo.thumbnail)
-                                    div.title #{val.videoInfo.title}
+                                    div.title
+                                        a(href='/' + val.videoId + '/' + val.videoInfo.urlTitle) #{val.videoInfo.title}
                                     span.wasted-time(data-views=val.videoInfo.views,data-length=val.videoInfo.length)
                                     a.view-movie(href='/' + val.videoId + '/' + val.videoInfo.urlTitle) How much time?
 

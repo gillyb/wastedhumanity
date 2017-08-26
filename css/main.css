@@ -43,6 +43,8 @@ html { /*background-color:#e8e8e8;*/ background-color:#cddee6; }
 #logo { height:50px; font-size:24px; text-align:center; font-family:'Sniglet', Arial, sans-serif; color:white; font-size:54px; letter-spacing:-3px; padding-top:70px; }
 
 .title, #products .product .name { color:#333; font-weight:bold; font-size:13px; }
+.title a { font-weight: bold; text-decoration: none; color: #333; }
+.title a:hover { text-decoration: underline; }
 div.thumbnail { position:relative; }
 .thumbnail { float:left; }
 .thumbnail .overlay { position:absolute; display:none; bottom:0; height:40px; text-align:center; width:100%; background-color:#e8e8e8; opacity:0.8; color:black; padding-top:12px; text-decoration:underline; z-index:10; }

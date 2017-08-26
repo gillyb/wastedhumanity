@@ -4,7 +4,6 @@
 - [x] Lock module versions
 - [x] Remove general share buttons
 - [x] Make unique page-title when viewing specific video
-- ??? [] Remove 'how much time' button
 - [x] Each video should redirect to it's own page
 - [] Display time details of video without having to push button
 - [] Create internal cache for video calculations
@@ -18,7 +17,7 @@
 - [] Create twitter feed
 - [] Create facebook page  
 
-- [] Remove google ads
+- [x] Remove google ads
 - [] Convert css to *.less
 - [] Minify static resources
 - [] Cache static resources
