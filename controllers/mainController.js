@@ -89,13 +89,13 @@ var defaultPageTitle = 'The time humanity wasted on nonsense';
 app.get('/', function (req, res) {
 
     Promise.all([
-        youtubeProvider.getHomePageVideos(videoRepo.popularVideos),
+        youtubeProvider.getTrendingVideos(10),
         youtubeProvider.getHomePageVideos(videoRepo.favoriteVideos)
     ]).then((results) => {
 
         res.render('homepage', {
-            videos: results[0],
-            favoriteVideos: results[1],
+            trendingVideos: results[0],
+            allTimePopularVideos: results[1],
             currentVideo: null,
             products: products,
             pageTitle: defaultPageTitle
@@ -109,13 +109,13 @@ app.get('/:videoId', (req, res) => {
     var videoId = req.params.videoId;
 
     Promise.all([
-        youtubeProvider.getHomePageVideos(videoRepo.popularVideos),
+        youtubeProvider.getTrendingVideos(10),
         youtubeProvider.getHomePageVideos(videoRepo.favoriteVideos)
     ]).then((results) => {
 
         res.render('homepage', {
-            videos: results[0],
-            favoriteVideos: results[1],
+            trendingVideos: results[0],
+            allTimePopularVideos: results[1],
             currentVideo: videoId,
             products: products,
             pageTitle: defaultPageTitle
@@ -128,13 +128,13 @@ app.get('/:videoId/:videoName', (req, res) => {
     var videoId = req.params.videoId;
 
     Promise.all([
-        youtubeProvider.getHomePageVideos(videoRepo.popularVideos),
+        youtubeProvider.getTrendingVideos(10),
         youtubeProvider.getHomePageVideos(videoRepo.favoriteVideos)
     ]).then((results) => {
 
         res.render('homepage', {
-            videos: results[0],
-            favoriteVideos: results[1],
+            trendingVideos: results[0],
+            allTimePopularVideos: results[1],
             currentVideo: videoId,
             products: products,
             pageTitle: req.params.videoName
@@ -168,18 +168,14 @@ app.post('/get-info', function (req, res) {
     }
 
     // retrieve video info from youtube api
-    try {
-        youtubeProvider.getVideoInfo(videoId, function (videoInfo) {
-            if (useCache)
-                cacheProvider.put(videoId, videoInfo, 3);
-            res.json(videoInfo);
-            return;
-        });
-    }
-    catch (e) {
-        // TODO: return some json response
+    youtubeProvider.getVideoInfo(videoId).then((videoInfo) => {
+        if (useCache)
+            cacheProvider.put(videoId, videoInfo, 3);
+        res.json(videoInfo);
+        return;
+    }).catch(() => {
         res.json({error: 'error getting video info'});
         return;
-    }
+    });
 
 });

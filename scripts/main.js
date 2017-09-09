@@ -2,46 +2,6 @@ $(function () {
 
     $('#video-url').focus();
 
-    $('#popular-videos .popular-video').each(function (i, elem) {
-        var _videoId = $(elem).data('video-id');
-
-        var hasInfo = $(elem).find('.title').text().trim() != '';
-        if (hasInfo) {
-            var e = $(elem).find('.wasted-time');
-            e.html('Humanity wasted too much time on this');
-            return;
-        }
-
-        $.ajax({
-            type: 'post',
-            url: '/get-info',
-            data: {
-                videoId: _videoId,
-                useCache: true
-            },
-            success: function (res) {
-                if (!res) {
-                    $(elem).find('.title').html('Error retrieving video data...');
-                    $(elem).find('.view-movie').remove();
-                    return;
-                }
-
-                var defaultImg = $(elem).find('.thumbnail').attr('src');
-                $(elem).find('.thumbnail')
-                    .attr('src', res.thumbnail)
-                    .one('error', function () {
-                        $(this).attr('src', defaultImg);
-                    });
-                $(elem).find('.title').html(res.title);
-
-                $(elem).find('.wasted-time').html('Humanity wasted too much time on this');
-            },
-            error: function (e) {
-                $(elem).find('.title').html('Error retrieving video data...');
-            }
-        });
-    });
-
     var currentVideo = $('#video-results').data('current-video');
     if (currentVideo && currentVideo.trim() != '') {
         $('#video-url').val('http://www.youtube.com/watch?v=' + currentVideo);

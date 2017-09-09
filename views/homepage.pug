@@ -57,7 +57,7 @@ block body
                 div#popular-videos
                     | Videos :: Currently trending
                     div.videos
-                        each val in videos
+                        each val in trendingVideos
                             span.popular-video(data-video-id=val.id)
                                 span.video-info
                                     a(href='/' + val.id)
@@ -71,7 +71,7 @@ block body
                 div#popular-videos
                     | Videos :: All time popular
                     div.videos
-                        each val in favoriteVideos
+                        each val in allTimePopularVideos
                             span.popular-video(data-video-id=val.id)
                                 span.video-info
                                     a(href='/' + val.id)
