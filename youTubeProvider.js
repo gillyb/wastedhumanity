@@ -1,6 +1,8 @@
 const request = require('request');
 const Promise = require('bluebird');
 const utils = require('./utils');
+const videoRepo = require('./videoRepository');
+const cacheProvider = require('./cacheProvider');
 
 var youtubeApiKey = 'AIzaSyA0xWbm5Q7SF5aFZQJ8EGmb6fNc8cjQEwg';
 
@@ -20,6 +22,7 @@ var _getVideoId = function (url) {
     return null;
 };
 
+// Gets currently trending youtube videos
 var _getTrendingVideos = (numResults) => {
 
     return new Promise((resolve, reject) => {
@@ -41,28 +44,42 @@ var _getTrendingVideos = (numResults) => {
 
 };
 
-var _getVideoInfo = function (videoId, callback) {
+// Gets the video info from cache.
+// If not in cache, fetches from youtube api
+var _getVideoInfo = function (videoId) {
 
-    console.log('making request to youtube video api');
+    let videoInfo = cacheProvider.get(videoId);
+    if (videoInfo) {
+        // refresh cache for another 10 minutes
+        cacheProvider.put(videoId, videoInfo, 10);
+        return Promise.resolve(videoInfo);
+    }
 
-    request({
-        uri: 'https://www.googleapis.com/youtube/v3/videos?part=contentDetails,statistics,snippet&id=' + videoId + '&key=' + youtubeApiKey,
-        method: 'GET',
-        json: true
-    }, (err, response, body) => {
-        if (err) {
-            console.log('Error while fetching youtube video data');
-            callback(null);
-        }
+    return new Promise((resolve, reject) => {
+        console.log('making request to youtube video api');
+        request({
+            uri: 'https://www.googleapis.com/youtube/v3/videos?part=contentDetails,statistics,snippet&id=' + videoId + '&key=' + youtubeApiKey,
+            method: 'GET',
+            json: true
+        }, (err, response, body) => {
+            if (err) {
+                console.log('Error while fetching youtube video data');
+                reject();
+                return;
+            }
 
-        try {
-            var videoData = extractVideoData(body.items[0]);
-            callback(videoData);
-        }
-        catch (e) {
-            console.log('error extracting video data. Error: ' + e);
-            callback(null);
-        }
+            try {
+                var videoData = extractVideoData(body.items[0]);
+                cacheProvider.put(videoId, videoData, 10);       // cache for 10 minutes
+                resolve(videoData);
+                return;
+            }
+            catch (e) {
+                console.log('error extracting video data. Error: ' + e);
+                reject();
+                return;
+            }
+        });
     });
 };
 
@@ -85,6 +102,13 @@ function extractVideoData(videoObj) {
     };
 }
 
+function _getHomePageVideos(videoIds) {
+    return Promise.map(videoIds, function(videoId) {
+        return _getVideoInfo(videoId);
+    });
+}
+
 exports.getVideoId = _getVideoId;
 exports.getVideoInfo = _getVideoInfo;
 exports.getTrendingVideos = _getTrendingVideos;
+exports.getHomePageVideos = _getHomePageVideos;

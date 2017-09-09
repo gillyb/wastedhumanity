@@ -20,8 +20,8 @@ var _get = function(key) {
 	return null;
 };
 
-var _put = function(key, value, expire) {
-	var expiration = now() + (expire * 60 * 1000);
+var _put = function(key, value, expireMinutes) {
+	var expiration = now() + (expireMinutes * 60 * 1000);
 	cache[key] = {
 		'val': value,
 		'expire': expiration

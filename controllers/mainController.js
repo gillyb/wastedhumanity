@@ -1,11 +1,8 @@
 const youtubeProvider = require('./../youTubeProvider');
 const cacheProvider = require('./../cacheProvider');
+const videoRepo = require('./../videoRepository');
 
-const popularVideos = ['9bZkp7q19f0', 'kffacxfA7G4', 'fWNaR-rxAic', 'QK8mJJJvaes', 'KQ6zr6kCPj8', 'qrO4YZeyl0I'];
-const favoriteVideos = ['QH2-TGUlwu4', 'jofNR_WkoCE', 'uVTfszppJl8', 'nlt5Wa13fFU', 'EIyixC9NsLI', 'Lf2db4hD6zI',
-    'cYNdUM2gRsg', 'VCEsveSK5to', 'IDtdQ8bTvRc', '2Tvy_Pbe5NA', 'K7l5ZeVVoCA', 'xfeys7Jfnx8',
-    'khCokQt--l4', 'xDj7gvc_dsA', 'nZcRU0Op5P4', 'lVmmYMwFj1I'];
-
+// TODO: move this to product repo!!!
 const products = [
     {
         url: 'http://amzn.to/2hn2w5v',
@@ -88,38 +85,63 @@ const products = [
 ];
 
 var defaultPageTitle = 'The time humanity wasted on nonsense';
-app.get('/', function (req, res) {
-    // youtubeProvider.getTrendingVideos(10).then((trendingVideos) => {
 
-	res.render('homepage', {
-		videos: getHomePageVideos(popularVideos),
-		favoriteVideos: getHomePageVideos(favoriteVideos),
-		currentVideo: null,
-        products: products,
-        pageTitle: defaultPageTitle
-	});
+app.get('/', function (req, res) {
+
+    Promise.all([
+        youtubeProvider.getHomePageVideos(videoRepo.popularVideos),
+        youtubeProvider.getHomePageVideos(videoRepo.favoriteVideos)
+    ]).then((results) => {
+
+        res.render('homepage', {
+            videos: results[0],
+            favoriteVideos: results[1],
+            currentVideo: null,
+            products: products,
+            pageTitle: defaultPageTitle
+        });
+
+    });
 
 });
 
 app.get('/:videoId', (req, res) => {
     var videoId = req.params.videoId;
-    res.render('homepage', {
-        videos: getHomePageVideos(popularVideos),
-        favoriteVideos: getHomePageVideos(favoriteVideos),
-        currentVideo: videoId,
-        products: products,
-        pageTitle: defaultPageTitle
+
+    Promise.all([
+        youtubeProvider.getHomePageVideos(videoRepo.popularVideos),
+        youtubeProvider.getHomePageVideos(videoRepo.favoriteVideos)
+    ]).then((results) => {
+
+        res.render('homepage', {
+            videos: results[0],
+            favoriteVideos: results[1],
+            currentVideo: videoId,
+            products: products,
+            pageTitle: defaultPageTitle
+        });
+
     });
+
 });
 app.get('/:videoId/:videoName', (req, res) => {
     var videoId = req.params.videoId;
-    res.render('homepage', {
-        videos: getHomePageVideos(popularVideos),
-        favoriteVideos: getHomePageVideos(favoriteVideos),
-        currentVideo: videoId,
-        products: products,
-        pageTitle: req.params.videoName
+
+    Promise.all([
+        youtubeProvider.getHomePageVideos(videoRepo.popularVideos),
+        youtubeProvider.getHomePageVideos(videoRepo.favoriteVideos)
+    ]).then((results) => {
+
+        res.render('homepage', {
+            videos: results[0],
+            favoriteVideos: results[1],
+            currentVideo: videoId,
+            products: products,
+            pageTitle: req.params.videoName
+        });
+
     });
+
 });
 
 app.post('/get-info', function (req, res) {
@@ -146,9 +168,8 @@ app.post('/get-info', function (req, res) {
     }
 
     // retrieve video info from youtube api
-    var videoInfo = null;
     try {
-        videoInfo = youtubeProvider.getVideoInfo(videoId, function (videoInfo) {
+        youtubeProvider.getVideoInfo(videoId, function (videoInfo) {
             if (useCache)
                 cacheProvider.put(videoId, videoInfo, 3);
             res.json(videoInfo);
@@ -162,26 +183,3 @@ app.post('/get-info', function (req, res) {
     }
 
 });
-
-function getHomePageVideos(videoIds) {
-    var _videos = [];
-
-    // check if we have them in the cache already
-    var videoCount = 0;
-    videoIds.forEach(function (videoId) {
-        var cacheValue = cacheProvider.get(videoId);
-
-        if (cacheValue != null)
-            _videos.push({
-                videoId: videoId,
-                videoInfo: cacheValue
-            });
-        else
-            _videos.push({
-                videoId: videoId,
-                videoInfo: { title: '', length: '', views: '', thumbnail: '' }
-            });
-    });
-
-    return _videos;
-}

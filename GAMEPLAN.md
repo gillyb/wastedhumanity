@@ -8,7 +8,7 @@
 - [] Display time details of video without having to push button
 - [] Create internal cache for video calculations
 - [x] Move youtube api call to server
-- [] Edit page title according to the video being watched
+- [x] Edit page title according to the video being watched
 - [] Separate share buttons for each video (only facebook, twitter, and link)
 - []
 - [] Two categories - "Trending" & "All-time"

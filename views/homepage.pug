@@ -58,28 +58,28 @@ block body
                     | Videos :: Currently trending
                     div.videos
                         each val in videos
-                            span.popular-video(data-video-id=val.videoId)
+                            span.popular-video(data-video-id=val.id)
                                 span.video-info
-                                    a(href='/' + val.videoId)
-                                        img.thumbnail(src=val.videoInfo.thumbnail)
+                                    a(href='/' + val.id)
+                                        img.thumbnail(src=val.thumbnail)
                                     div.title
-                                        a(href='/' + val.videoId + '/' + val.videoInfo.urlTitle) #{val.videoInfo.title}
-                                    span.wasted-time(data-views='#{val.videoInfo.views}',data-length=val.videoInfo.length)
-                                    a.view-movie(href='/' + val.videoId + '/' + val.videoInfo.urlTitle) How much time?
+                                        a(href='/' + val.id + '/' + val.urlTitle) #{val.title}
+                                    span.wasted-time(data-views='#{val.views}',data-length=val.length)
+                                    a.view-movie(href='/' + val.id + '/' + val.urlTitle) How much time?
 
 
                 div#popular-videos
                     | Videos :: All time popular
                     div.videos
                         each val in favoriteVideos
-                            span.popular-video(data-video-id=val.videoId)
+                            span.popular-video(data-video-id=val.id)
                                 span.video-info
-                                    a(href='/' + val.videoId)
-                                        img.thumbnail(src=val.videoInfo.thumbnail)
+                                    a(href='/' + val.id)
+                                        img.thumbnail(src=val.thumbnail)
                                     div.title
-                                        a(href='/' + val.videoId + '/' + val.videoInfo.urlTitle) #{val.videoInfo.title}
-                                    span.wasted-time(data-views=val.videoInfo.views,data-length=val.videoInfo.length)
-                                    a.view-movie(href='/' + val.videoId + '/' + val.videoInfo.urlTitle) How much time?
+                                        a(href='/' + val.id + '/' + val.urlTitle) #{val.title}
+                                    span.wasted-time(data-views=val.views,data-length=val.length)
+                                    a.view-movie(href='/' + val.id + '/' + val.urlTitle) How much time?
 
             div.half-column
                 div#products
