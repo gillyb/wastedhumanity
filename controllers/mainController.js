@@ -12,7 +12,7 @@ const products = [
     },
     {
         url: 'http://amzn.to/2zq2IWo',
-        img: 'https://images-na.ssl-images-amazon.com/images/I/31VTJj4VuVL.jpg',
+        img: 'https://images-na.ssl-images-amazon.com/images/I/71KpZCBa%2BZL._SX522_.jpg',
         name: 'Poop face emoji cuddle pillow',
         description: 'You want to cuddle, but no one really wants to cuddle with you.. Then this is for you!'
     },
@@ -24,7 +24,7 @@ const products = [
     },
     {
         url: 'http://amzn.to/2xHt4B9',
-        img: 'https://images-na.ssl-images-amazon.com/images/G/01/apparel/rcxgs/tile._CB211431200_.gif',
+        img: 'https://images-na.ssl-images-amazon.com/images/I/81mixtNS-BL._SY679_.jpg',
         name: 'Infant mermaid costume',
         description: 'Just looking at the image of this ridiculous baby costume, made me laugh out loud.'
     },
