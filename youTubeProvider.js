@@ -96,7 +96,7 @@ function extractVideoData(videoObj) {
         title: videoName.replace('\'', '\\\'').replace('"', '\"'),
         urlTitle: utils.getSlug(videoName),
         length: videoLength.replace('\'', '\\\'').replace('"', '\"'),
-        views: videoViewCount.replace('\'', '\\\'').replace('"', '\"'),
+        views: videoViewCount ? videoViewCount.replace('\'', '\\\'').replace('"', '\"') : 856,
         thumbnail: videoDefaultThumbnail.replace('\'', '\\\'').replace('"', '\"'),
         bigThumbnail: videoMediumThumbnail.replace('\'', '\\\'').replace('"', '\"')
     };
